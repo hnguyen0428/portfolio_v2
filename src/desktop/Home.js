@@ -30,15 +30,16 @@ class Home extends React.Component {
   }
 
   render() {
+    let home = process.env.NODE_ENV === 'development' ? '/' : '/portfolio/';
     return (
       <Flexbox style={style.root} alignItems="center">
         <Navbar blur>
           <NavbarUnit label="Daniel Nguyen" position="left" fontWeight={500}
-                      paddingHorizontal={16} href="/"/>
+                      paddingHorizontal={16} href={home}/>
           {/*<NavbarUnit label="Work Experience"/>*/}
           {/*<NavbarUnit label="Projects"/>*/}
           {/*<NavbarUnit label="Education"/>*/}
-          <NavbarUnit label="Resume" href={profile.resumeLink} target="_blank"
+          <NavbarUnit label="Resume" href="assets/Resume.pdf" target="_blank"
                       logClick={true} logDescription="Visited Resume" hasBorder
                       borderRadius={6}/>
           <NavbarUnitIcon src={"assets/github_icon.png"}
