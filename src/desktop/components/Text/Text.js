@@ -15,7 +15,6 @@ class Text extends React.Component {
 
     let logData = {
       action: 'visit_href',
-      context: this.constructor.name,
       href: this.props.href,
     };
     if (this.props.logDescription) {

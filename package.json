@@ -17,7 +17,7 @@
     "react-style-proptype": "^3.2.2"
   },
   "scripts": {
-    "predeploy": "npm run buikd",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",

@@ -1,24 +1,28 @@
 const profile = {
   "aboutMe": {
     "heading": "Hello, My name is Daniel!",
-    "text": "I'm a college student from the Orange County area. I am currently a Sophomore " +
-      "undergraduate studying Computer Science at University of California, San Diego. My interest in the field of " +
-      "computer science and engineering stems from my curiosity in how everything in life works, especially the crazy " +
-      "idea that computers are essentially junks of metals that could do tasks that humans cannot easily do. I am " +
-      "someone who enjoys learning new things, and this goes for anything, not just purely computer and technology " +
-      "related. If anything catches my interest, I would spend hours and hours to learn it even if it is 3 AM in the " +
-      "morning. In my free time, I spend A LOT of hours playing the guitar, and occasionally play video games " +
-      "and watch political news.\n" +
-      "My goal in life is to be able to create things that would make as much positive impact on the world as " +
-      "possible.\n\n" +
-      "In the past I have interned at Teradata as a Software Engineer on the Cloud Engineering team. When at school, I " +
-      "serve as a tutor for the Computer Science department. I always try to expand my field of knowledge outside of " +
-      "what's taught in school and gain industry experience.\n" +
-      "This summer (2019), I will be interning at Facebook as a Software Engineer. I am currently looking for " +
-      "opportunities for full time SWE positions starting summer 2020."
+    "text": "I'm an incoming Senior at UC San Diego studying Computer Science with " +
+      "a minor in Math. I'm currently interning at Facebook as a Software Engineer " +
+      "working on the Facebook Events product.\n\n" +
+      "My primary interests are in Computer Networks and Security and I hope to " +
+      "be able to work in the field some day. In my free time, I develop mobile apps " +
+      "and websites such as my portfolio since I find it very enjoyable to create " +
+      "something that you could directly experience.\n\n" +
+      "What I look for in a job is the ability to make an impact. I'm motivated " +
+      "by the fact that I could create something that can bring benefits to " +
+      "the society. I will be graduating in June 2020 and looking toward full time " +
+      "opportunities in Software Engineering.",
   },
   "workExperience":  {
     objs: [
+      {
+        name: "Facebook",
+        title: "Software Engineering Intern",
+        date: "June 2019 - September 2019",
+        description: "Working on the Events Distribution team.",
+        techUsed: "Python, Presto/Hive",
+        logo: "assets/facebook_logo_text.png"
+      },
       {
         name: "Teradata",
         title: "Software Engineering Intern",
@@ -36,14 +40,6 @@ const profile = {
         techUsed: "Ruby Sinatra, Dashing, Docker, REST, Jenkins, Prometheus, AWS\n",
         logo: "assets/teradata_logo_text.png"
       },
-      {
-        name: "Facebook",
-        title: "Software Engineering Intern",
-        date: "June 2019 - September 2019",
-        description: "Working on the Events Distribution team.",
-        techUsed: "Python, Presto/Hive",
-        logo: "assets/facebook_logo_text.png"
-      }
     ],
     heading: "Work Experience",
     text: "I've been fortunate to have interned at two companies during my " +

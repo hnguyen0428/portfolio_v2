@@ -37,7 +37,6 @@ class WorkExperienceCard extends React.Component {
     // Log
     Logger.genLog({
       action: 'click_work_experience_card',
-      context: this.constructor.name,
       description: 'Visited ' + name + ' Card',
     })
   };

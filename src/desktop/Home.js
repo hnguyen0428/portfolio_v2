@@ -34,12 +34,13 @@ class Home extends React.Component {
       <Flexbox style={style.root} alignItems="center">
         <Navbar blur>
           <NavbarUnit label="Daniel Nguyen" position="left" fontWeight={500}
-                      paddingHorizontal={16}/>
-          <NavbarUnit label="Work Experience"/>
-          <NavbarUnit label="Projects"/>
-          <NavbarUnit label="Education"/>
+                      paddingHorizontal={16} href="/"/>
+          {/*<NavbarUnit label="Work Experience"/>*/}
+          {/*<NavbarUnit label="Projects"/>*/}
+          {/*<NavbarUnit label="Education"/>*/}
           <NavbarUnit label="Resume" href={profile.resumeLink} target="_blank"
-                      logClick={true} logDescription="Visited Resume"/>
+                      logClick={true} logDescription="Visited Resume" hasBorder
+                      borderRadius={6}/>
           <NavbarUnitIcon src={"assets/github_icon.png"}
                           href={profile.githubLink} target="_blank"
                           logClick={true} logDescription="Visited Github"/>

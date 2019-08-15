@@ -43,7 +43,6 @@ class ProjectCard extends React.Component {
     // Log
     Logger.genLog({
       action: 'click_project_card',
-      context: this.constructor.name,
       description: 'Visited ' + title + ' Card',
     })
   };

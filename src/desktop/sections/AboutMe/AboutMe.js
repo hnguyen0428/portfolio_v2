@@ -10,7 +10,7 @@ class AboutMe extends React.Component {
   render() {
     return (
       <Flexbox backgroundColor={CSSColor.LIGHT_WHITE} widthPct={100}
-               alignItems="center" paddingVertical={28}>
+               alignItems="center" paddingVertical={64}>
         <Flexbox className="overflow-wrap"
                  width={1100}
                  flexDirection="row" alignItems="center"
