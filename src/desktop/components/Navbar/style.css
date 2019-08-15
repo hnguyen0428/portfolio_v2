@@ -1,0 +1,14 @@
+@import '../../../constants/CSSColor.css';
+
+
+.navbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    width: 100%;
+}
+
+.navbarBlur {
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+}

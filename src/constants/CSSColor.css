@@ -1,0 +1,30 @@
+:root {
+    --gray-00: #F5F6F7;
+    --gray-05: #F2F3F5;
+    --gray-10: #EBEDF0;
+    --gray-20: #DADDE1;
+    --gray-25: #CCD0D5;
+    --gray-30: #BEC3C9;
+    --gray-45: #8D949E;
+    --gray-70: #606770;
+    --gray-80: #444950;
+    --gray-100: #1C1E21;
+    --gray: #D2D5DF;
+    --white: #FFFFFF;
+    --light-white: #FAFAFA;
+    --black: #000000;
+
+    --black-alpha-05: rgba(0, 0, 0, 0.05);
+    --black-alpha-10: rgba(0, 0, 0, 0.1);
+    --black-alpha-20: rgba(0, 0, 0, 0.2);
+    --black-alpha-30: rgba(0, 0, 0, 0.3);
+    --black-alpha-40: rgba(0, 0, 0, 0.4);
+    --black-alpha-50: rgba(0, 0, 0, 0.5);
+    --black-alpha-60: rgba(0, 0, 0, 0.6);
+    --black-alpha-70: rgba(0, 0, 0, 0.7);
+    --black-alpha-80: rgba(0, 0, 0, 0.8);
+    --black-alpha-90: rgba(0, 0, 0, 0.9);
+
+    --secondary-text: rgba(145, 148, 155, 1.0);
+    --primary-text: var(--gray-100);
+}

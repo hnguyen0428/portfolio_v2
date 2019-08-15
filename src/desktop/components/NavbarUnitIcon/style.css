@@ -1,0 +1,6 @@
+@import '../../../constants/CSSColor.css';
+
+.navbarUnitIcon {
+    padding-left: 12px;
+    padding-right: 12px;
+}

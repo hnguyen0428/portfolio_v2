@@ -1,10 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+
+import MobileHome from './mobile/Home';
+import DesktopHome from './desktop/Home';
+import {isMobileOnly} from 'react-device-detect';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+if (isMobileOnly) {
+  ReactDOM.render(<MobileHome/>, document.getElementById('root'));
+} else {
+  ReactDOM.render(<DesktopHome/>, document.getElementById('root'));
+}
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

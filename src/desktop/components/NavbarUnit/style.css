@@ -1,0 +1,15 @@
+@import '../../../constants/CSSColor.css';
+
+.navbarUnit {
+    color: var(--white);
+}
+
+.navbarUnitPadding {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.navbarUnitWithBorder {
+    padding-left: 6px;
+    padding-right: 6px;
+}
