@@ -6,7 +6,6 @@ import './style.css';
 
 class ProfileImage extends React.Component {
   render() {
-
     let {src, alt, size, circular, href, target, onClick} = this.props;
     size = size || 256;
     return (

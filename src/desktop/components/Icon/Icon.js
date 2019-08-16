@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Logger from '../../../logger/logger';
+import Logger from '../../../firebase/logger';
 import './style.css';
 import Image from "../Image";
+import CommonProps from "../../common/props";
 
 
 class Icon extends React.Component {
@@ -20,10 +21,8 @@ Icon.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string,
   size: PropTypes.oneOf([16, 20, 24, 28, 32, 36, 40]),
-  href: PropTypes.string,
-  target: PropTypes.string,
-  logDescription: PropTypes.string,
-  logClick: PropTypes.bool,
+  ...CommonProps.links,
+  ...CommonProps.loggings,
   onClick: PropTypes.func
 };
 

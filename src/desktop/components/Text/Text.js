@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Logger from '../../../logger/logger';
+import Logger from '../../../firebase/logger';
 import './style.css';
 import CSSColor from "../../../constants/CSSColor";
+import CommonProps from "../../common/props";
 
 const stylePropType = require('react-style-proptype');
 
@@ -20,33 +21,19 @@ class Text extends React.Component {
     if (this.props.logDescription) {
       logData = {...logData, description: this.props.logDescription};
     }
+    if (this.props.logExtra) {
+      logData = {...logData, extra: this.props.logExtra};
+    }
 
     // If there is an href, then log
     Logger.genLog(logData);
   };
 
   render() {
-    let fontSize = this.props.size ? String(this.props.size) + 'pt' : null;
-    let fontColor = CSSColor.PRIMARY_TEXT;
-    if (this.props.color) {
-      if (this.props.color === 'secondary') {
-        fontSize = '12pt';
-        fontColor = CSSColor.SECONDARY_TEXT;
-      } else if (this.props.color === 'primary') {
-        fontSize = '16pt';
-        fontColor = CSSColor.PRIMARY_TEXT;
-      } else {
-        fontColor = this.props.color;
-      }
-    }
-
-    let style = {
-      fontWeight: this.props.weight || 400,
-      fontSize: fontSize || '12pt',
-      lineHeight: this.props.lineHeight || 1.2,
-      color: fontColor
-    };
+    let style = {};
+    style = CommonProps.setTextStyleOrDefault(style, this.props);
     style = {...style, ...this.props.style};
+
     let cls = [this.props.className, "text"];
     if (this.props.buttonFont) {
       cls.push("btnFont");
@@ -139,14 +126,11 @@ class Text extends React.Component {
 Text.propTypes = {
   className: PropTypes.string,
   heading: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
-  href: PropTypes.string,
-  target: PropTypes.string,
-  weight: PropTypes.oneOf([100, 200, 300, 400, 500, 600, 700, 800, 900, 'normal', 'bold', 'bolder', 'lighter']),
-  lineHeight: PropTypes.number,
-  logDescription: PropTypes.string,
-  logClick: PropTypes.bool,
-  size: PropTypes.number,
-  color: PropTypes.string,
+
+  ...CommonProps.links,
+  ...CommonProps.text,
+  ...CommonProps.loggings,
+
   buttonFont: PropTypes.bool,
   onClick: PropTypes.func,
   children: function (props, propName, componentName) {
@@ -165,7 +149,7 @@ Text.propTypes = {
       );
     }
   },
-  style: stylePropType,
+  ...CommonProps.style,
 };
 
 

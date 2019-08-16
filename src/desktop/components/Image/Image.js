@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Logger from '../../../logger/logger';
+import Logger from '../../../firebase/logger';
 import './style.css';
+import CommonProps from "../../common/props";
 
 
 class Image extends React.Component {
@@ -16,6 +17,9 @@ class Image extends React.Component {
     };
     if (this.props.logDescription) {
       logData = {...logData, description: this.props.logDescription};
+    }
+    if (this.props.logExtra) {
+      logData = {...logData, extra: this.props.logExtra};
     }
 
     // If there is an href, then log
@@ -47,10 +51,8 @@ Image.propTypes = {
   alt: PropTypes.string,
   width: PropTypes.number,
   height: PropTypes.number,
-  href: PropTypes.string,
-  target: PropTypes.string,
-  logDescription: PropTypes.string,
-  logClick: PropTypes.bool,
+  ...CommonProps.links,
+  ...CommonProps.loggings,
   onClick: PropTypes.func,
   children: function (props, propName, componentName) {
     let numChildren = React.Children.count(props.children);

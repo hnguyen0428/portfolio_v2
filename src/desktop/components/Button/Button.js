@@ -4,40 +4,74 @@ import CSSColor from "../../../constants/CSSColor";
 import Flexbox from "../../components/Flexbox";
 import Text from "../../components/Text";
 import './style.css';
+import CommonProps from "../../common/props";
 
 const stylePropType = require('react-style-proptype');
 
 class Button extends React.Component {
+  onClick = (e) => {
+    if (!this.props.disabled && this.props.onClick) {
+      this.props.onClick(e);
+    }
+  };
+
   render() {
+    const {
+      fontSize,
+      fontWeight,
+      label,
+      lineHeight,
+      href,
+      target,
+      style,
+      paddingVertical,
+      paddingHorizontal,
+      borderRadius,
+      borderColor,
+      borderWidth,
+      topBorder,
+      leftBorder,
+      bottomBorder,
+      rightBorder,
+      allBorder,
+      backgroundColor,
+      color,
+      logDescription,
+      logClick,
+      disabled,
+      disabledBackgroundColor,
+      disabledColor,
+      disabledBorderColor,
+    } = this.props;
     let textColorStyle = {
-      color: this.props.color || CSSColor.GRAY_100
+      color: (disabled ? disabledColor : color) || CSSColor.GRAY_100
     };
 
     return (
       <Flexbox className="btnHover cursorPointer"
-               href={this.props.href}
-               target={this.props.target}
-               onClick={this.props.onClick}
-               style={this.props.style}
-               paddingVertical={this.props.paddingVertical}
-               paddingHorizontal={this.props.paddingHorizontal}
-               borderRadius={this.props.borderRadius}
-               borderColor={this.props.borderColor}
-               borderWidth={this.props.borderWidth}
-               topBorder={this.props.topBorder}
-               leftBorder={this.props.leftBorder}
-               bottomBorder={this.props.bottomBorder}
-               rightBorder={this.props.rightBorder}
-               allBorder={this.props.allBorder}
-               backgroundColor={this.props.backgroundColor}>
+               href={disabled ? null : href}
+               target={target}
+               onClick={this.onClick}
+               style={style}
+               paddingVertical={paddingVertical}
+               paddingHorizontal={paddingHorizontal}
+               borderRadius={borderRadius}
+               borderColor={disabled ? disabledBorderColor : borderColor}
+               borderWidth={borderWidth}
+               topBorder={topBorder}
+               leftBorder={leftBorder}
+               bottomBorder={bottomBorder}
+               rightBorder={rightBorder}
+               allBorder={allBorder}
+               backgroundColor={disabled ? disabledBackgroundColor : backgroundColor}>
         <Text className="unselectable"
-              size={this.props.fontSize || 12}
-              weight={this.props.fontWeight || 300}
-              href={this.props.href} target={this.props.target}
-              logClick={this.props.logClick} lineHeight={this.props.lineHeight}
-              logDescription={this.props.logDescription} style={textColorStyle}
+              fontSize={fontSize || 12}
+              fontWeight={fontWeight || 300}
+              href={disabled ? null : href} target={disabled ? null : target}
+              logClick={!disabled && logClick} lineHeight={lineHeight}
+              logDescription={logDescription} style={textColorStyle}
               buttonFont>
-          {this.props.label}
+          {label}
         </Text>
       </Flexbox>
     );
@@ -46,27 +80,22 @@ class Button extends React.Component {
 
 Button.propTypes = {
   label: PropTypes.string.isRequired,
-  fontWeight: PropTypes.oneOf([100, 200, 300, 400, 500, 600, 700, 800, 900, 'normal', 'bold', 'bolder', 'lighter']),
-  fontSize: PropTypes.number,
-  lineHeight: PropTypes.number,
-  href: PropTypes.string,
-  target: PropTypes.string,
-  color: PropTypes.string,
   backgroundColor: PropTypes.string,
-  borderRadius: PropTypes.number,
-  borderColor: PropTypes.string,
-  borderWidth: PropTypes.string,
-  topBorder: PropTypes.bool,
-  leftBorder: PropTypes.bool,
-  bottomBorder: PropTypes.bool,
-  rightBorder: PropTypes.bool,
-  allBorder: PropTypes.bool,
-  paddingHorizontal: PropTypes.number,
-  paddingVertical: PropTypes.number,
-  logDescription: PropTypes.string,
-  logClick: PropTypes.bool,
+
+  ...CommonProps.text,
+  ...CommonProps.links,
+  ...CommonProps.paddings,
+  ...CommonProps.borders,
+  ...CommonProps.loggings,
+
   onClick: PropTypes.func,
-  style: stylePropType,
+
+  // Disabled props
+  disabled: PropTypes.bool,
+  disabledColor: PropTypes.string,
+  disabledBackgroundColor: PropTypes.string,
+  disabledBorderColor: PropTypes.string,
+  ...CommonProps.style,
 
 };
 

@@ -10,12 +10,12 @@ const profile = {
       "something that you could directly experience.\n\n" +
       "What I look for in a job is the ability to make an impact. I'm motivated " +
       "by the fact that I could create something that can bring benefits to " +
-      "the society. I will be graduating in June 2020 and looking toward full time " +
+      "the society. I will be graduating in June 2020 and looking toward a full time " +
       "opportunities in Software Engineering.",
   },
   "workExperience":  {
-    objs: [
-      {
+    objs: {
+      0: {
         name: "Facebook",
         title: "Software Engineering Intern",
         date: "June 2019 - September 2019",
@@ -23,7 +23,7 @@ const profile = {
         techUsed: "Python, Presto/Hive",
         logo: "assets/facebook_logo_text.png"
       },
-      {
+      1: {
         name: "Teradata",
         title: "Software Engineering Intern",
         date: "June 2018 - September 2018",
@@ -40,7 +40,7 @@ const profile = {
         techUsed: "Ruby Sinatra, Dashing, Docker, REST, Jenkins, Prometheus, AWS\n",
         logo: "assets/teradata_logo_text.png"
       },
-    ],
+    },
     heading: "Work Experience",
     text: "I've been fortunate to have interned at two companies during my " +
       "time in college. These internships have helped me tremendously in " +
@@ -48,8 +48,8 @@ const profile = {
       "Click on the logos to find more about my experience."
   },
   "projects": {
-    objs: [
-      {
+    objs: {
+      0: {
         title: "Code Style Linter",
         shortDesc: "A style linter for C and ARM Assembly files.",
         longDesc: "The style linter is capable of checking many things ranging from indentations, \"Magic\" numbers, lines" +
@@ -64,7 +64,7 @@ const profile = {
         mediaDescriptions: [],
         mediaTypes: []
       },
-      {
+      1: {
         title: "CodeSnippler",
         shortDesc: "A website for quickly looking up common code snippets in " +
           "order to assist with the developing process.",
@@ -83,7 +83,7 @@ const profile = {
         mediaDescriptions: [],
         mediaTypes: []
       },
-      {
+      2: {
         title: "GroupPlanner",
         shortDesc: "An iOS application that helps you find the appropriate time to hang out with your " +
           "friends.",
@@ -124,7 +124,7 @@ const profile = {
           'image'
         ]
       },
-      {
+      3: {
         title: "GuitarTuner",
         shortDesc: "An iOS application that can be used to tune the guitar.",
         longDesc: "GuitarTuner was developed as a tool to help users tune their guitar with more than " +
@@ -151,92 +151,7 @@ const profile = {
           'video'
         ]
       },
-      {
-        title: "ZeroIn",
-        shortDesc: "A web app designed to save time for students who are looking to study more effectively by " +
-          "annotating lecture videos with time marks that contain important information and links where students can look " +
-          "to study more about that topic.",
-        longDesc: "ZeroIn was created at Hacktech 2018. The web app allows users to upload a lecture video " +
-          "that would then be sent to the back end.\n\n" +
-          "Our back end processes the audio and uses text analytics in order to determine what information is being " +
-          "conveyed in the video. It then sends back important key words that are mentioned in the video and links to " +
-          "where these topics can be found online.\n",
-        techUsed: "Python, JavaScript, ReactJS, Flask, AWS, Apache, Microsoft Cognitive Services Text Analytics " +
-          "API, Bing Search, and Speech Recognition",
-        repo: "https://github.com/hnguyen0428/caltech-ms-server",
-        date: "March 2018",
-        demoLink: null,
-        hasDemo: false,
-        medias: null,
-        mediaDescriptions: [],
-        mediaTypes: []
-      },
-      {
-        title: "LetsMeet",
-        shortDesc: "A mobile application designed to help college students find local events that are " +
-          "happening around them",
-        longDesc: "I created the back end, which is used for handling complex searching queries in order to " +
-          "compensate for Firebase's lack of support for searching by substring. The search results are then cached to " +
-          "memory in order to make subsequent queries faster. The front end retrieves these data through the API " +
-          "endpoints that I created.\n\n" +
-          "On the front end, I implemented Facebook OAuth for ease of registration. I also handled images caching in order " +
-          "for the feed to load much faster.\n",
-        techUsed: "JavaScript, ReactNative, Firebase, Node.js, Facebook OAuth, Google Maps API",
-        repo: "https://github.com/SPISYDEVS",
-        date: "June 2018",
-        demoLink: null,
-        hasDemo: true,
-        medias: [
-          "assets/demos/letsmeet/login.PNG",
-          "assets/demos/letsmeet/feed.PNG",
-          "assets/demos/letsmeet/feedsettings.PNG",
-          "assets/demos/letsmeet/myevents.PNG",
-          "assets/demos/letsmeet/createevent.PNG",
-          "assets/demos/letsmeet/eventdetails.PNG",
-          "assets/demos/letsmeet/comment.PNG"
-        ],
-        mediaDescriptions: [
-          'Login Page of Let\'s Meet',
-          'This is the feed page that shows all the events in the future that are going to happen. The feed loads events ' +
-          'that are close by based on the user\' settings set in the settings page.',
-          'Feed Settings page where the user can configure the radius where they want events to show up on their feed',
-          'This page shows all the events the user has created in the past',
-          'This page allows user to create their own event. User can add tags to the events, which will allow for people ' +
-          'to search based on those tags.',
-          'This page shows everything you need to know about the event, including everything from the date to who\'s ' +
-          'intending to come.',
-          'This page allows user to comment on the event for communication purposes. It utilizes Firebase\'s real time ' +
-          'feature to listen for comment creation and shows the comment in real time.'
-        ],
-        mediaTypes: [
-          'image',
-          'image',
-          'image',
-          'image',
-          'image',
-          'image',
-          'image'
-        ]
-      },
-      {
-        title: "Zenyth",
-        shortDesc: "A mobile application that allows you to create memory of places you have traveled to",
-        longDesc: "I designed the relational database schema and normalized it. The key features that I " +
-          "implemented include: request throttling when the same user spams too many requests to the same API endpoint, " +
-          "caching JSON response, and caching different image sizes.\n\n" +
-          "On the iOS application, I implemented Facebook/Google OAuth for authentication and implemented the core " +
-          "Model-View-Controller design. This includes building the network layer so that all JSON responses that come " +
-          "from the back end are serialized into model objects so that the presentation layer can display them.\n",
-        techUsed: "PHP, Swift, Laravel, MySQL, Redis, AWS, Apache, Google Maps API, Google/Facebook OAuth",
-        repo: "https://github.com/jeff4elee/zenyth_server",
-        date: "July 2017",
-        demoLink: null,
-        hasDemo: false,
-        medias: null,
-        mediaDescriptions: [],
-        mediaTypes: []
-      }
-    ],
+    },
     heading: "Some Projects I've Worked On",
     text: "These are the projects I've created in my free time while in college. " +
       "I had a lot of fun developing these projects and it is mainly through these projects " +

@@ -4,6 +4,7 @@ import './style.css';
 import '../../../constants/common.css';
 import Flexbox from '../Flexbox';
 import Icon from '../Icon';
+import CommonProps from "../../common/props";
 
 
 class NavbarUnitIcon extends React.Component {
@@ -19,7 +20,7 @@ class NavbarUnitIcon extends React.Component {
         <Icon className="btnHover"
               href={this.props.href} target={this.props.target}
               src={this.props.src} size={28}
-              logDescription={this.props.logType}
+              logDescription={this.props.logDescription}
               logClick={this.props.logClick}/>
       </Flexbox>
     );
@@ -29,10 +30,8 @@ class NavbarUnitIcon extends React.Component {
 NavbarUnitIcon.propTypes = {
   src: PropTypes.string,
   size: PropTypes.oneOf([16, 20, 24, 28, 32, 36, 40]),
-  href: PropTypes.string,
-  target: PropTypes.string,
-  logDescription: PropTypes.string,
-  logClick: PropTypes.bool,
+  ...CommonProps.links,
+  ...CommonProps.loggings,
   onClick: PropTypes.func,
   position: PropTypes.oneOf(['left', 'right']),
 };

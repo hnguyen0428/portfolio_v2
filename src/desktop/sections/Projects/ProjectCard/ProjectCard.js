@@ -8,7 +8,7 @@ import Image from '../../../components/Image';
 import Text from "../../../components/Text";
 import Modal from '../../../components/Modal';
 import HeaderText from "../../../components/HeaderText";
-import Logger from '../../../../logger/logger';
+import Logger from '../../../../firebase/logger';
 import './style.css';
 import Icon from "../../../components/Icon";
 
@@ -67,7 +67,7 @@ class ProjectCard extends React.Component {
                    minHeight={Modal.modalSizes[size].height}
                    minWidth={Modal.modalSizes[size].width}>
             <HeaderText title={title}/>
-            <Text color={CSSColor.MODAL_TEXT} size={12}>{longDesc}</Text>
+            <Text color={CSSColor.MODAL_TEXT}>{longDesc}</Text>
 
             <Flexbox widthPct={100} autoMarginTop flexDirection="row"
                      justifyContent="flex-end" alignItems="flex-end">
@@ -80,7 +80,7 @@ class ProjectCard extends React.Component {
               className={this.state.cls}>
           <Flexbox heightPct={100}>
             <Flexbox widthPct={100} flexDirection="row">
-              <Text weight="bold">{title}</Text>
+              <Text fontWeight="bold">{title}</Text>
               <Flexbox autoMarginLeft>
                 <Icon src="assets/github_icon_dark.png" href={repo}
                       target="_blank" size={28}
@@ -90,7 +90,7 @@ class ProjectCard extends React.Component {
             </Flexbox>
             <Text>{shortDesc}</Text>
             <Flexbox autoMarginTop className="btnHover">
-              <Text weight={500} lineHeight={0.4}>{techUsed}</Text>
+              <Text fontWeight={500} lineHeight={0.4}>{techUsed}</Text>
             </Flexbox>
           </Flexbox>
         </Card>

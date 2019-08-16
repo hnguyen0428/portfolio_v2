@@ -8,16 +8,27 @@ import Image from '../../../components/Image';
 import Text from "../../../components/Text";
 import Modal from '../../../components/Modal';
 import HeaderText from "../../../components/HeaderText";
-import Logger from '../../../../logger/logger';
+import Logger from '../../../../firebase/logger';
 import './style.css';
+import {fetchLoginState} from "../../../../firebase/auth";
+import {
+  fetchWorkExperienceText,
+  updateWorkExperienceContent
+} from "../../../../firebase/profile";
+import {getEditMode} from "../../../common/utils";
+import TextInput from "../../../components/TextInput";
 
 
 class WorkExperienceCard extends React.Component {
   constructor(props) {
     super(props);
 
+    let edit = getEditMode();
     this.state = {
       showModal: false,
+      obj: this.props.workExpObj,
+      loggedIn: false,
+      edit: edit,
     }
   }
 
@@ -41,12 +52,38 @@ class WorkExperienceCard extends React.Component {
     })
   };
 
+  onChangeText = (e, val) => {
+    this.setState({
+      obj: {
+        ...this.state.obj,
+        description: val,
+      }
+    });
+  };
+
+  onClickSaveButton = (e) => {
+    // Update About Me info
+    updateWorkExperienceContent(this.state.obj, this.props.dbKey, () => {
+    }, (error) => {
+      alert('Error updating work experience card.');
+    });
+  };
+
   onClickDoneButton = (e) => {
     this.closeModal();
   };
 
+  componentWillMount() {
+    fetchLoginState((loggedIn) => this.setState({loggedIn: loggedIn}));
+    fetchWorkExperienceText((obj) => {
+      this.setState({
+        objs: obj.objs || this.state.objs,
+      });
+    });
+  }
+
   render() {
-    const {name, title, date, description, techUsed, logo} = this.props.workExpObj;
+    const {name, title, date, description, techUsed, logo} = this.state.obj;
     let header = name + ' - ' + title;
     let subtitle = date;
 
@@ -56,7 +93,14 @@ class WorkExperienceCard extends React.Component {
                onBackdropClick={this.closeModal}>
           <Flexbox heightPct={100} widthPct={100}>
             <HeaderText title={header} subtitle={subtitle}/>
-            <Text color={CSSColor.MODAL_TEXT} size={12}>{description}</Text>
+            {
+              this.state.loggedIn && this.state.edit ?
+                <TextInput color={CSSColor.MODAL_TEXT} value={description}
+                           textarea minWidth={640}
+                           rows={17} onChange={this.onChangeText}/> :
+                <Text color={CSSColor.MODAL_TEXT}
+                      fontSize={12}>{description}</Text>
+            }
 
             <Flexbox widthPct={100} heightPct={100} autoMarginTop
                      flexDirection="row" alignItems="flex-end">
@@ -67,7 +111,15 @@ class WorkExperienceCard extends React.Component {
 
             <Flexbox widthPct={100} autoMarginTop flexDirection="row"
                      justifyContent="flex-end">
+              {
+                this.state.loggedIn && this.state.edit ?
+                  <Button label="Save" fontSize={14} lineHeight={0.5}
+                          paddingHorizontal={8}
+                          onClick={this.onClickSaveButton}/> :
+                  null
+              }
               <Button label="Done" fontSize={14} lineHeight={0.5}
+                      paddingHorizontal={8}
                       onClick={this.onClickDoneButton}/>
             </Flexbox>
           </Flexbox>
@@ -84,6 +136,7 @@ class WorkExperienceCard extends React.Component {
 }
 
 WorkExperienceCard.propTypes = {
+  dbKey: PropTypes.string,
   workExpObj: PropTypes.shape({
     name: PropTypes.string,
     title: PropTypes.string,

@@ -6,6 +6,7 @@ import Flexbox from '../Flexbox';
 import Button from '../Button';
 import Text from '../Text';
 import CSSColor from "../../../constants/CSSColor";
+import CommonProps from "../../common/props";
 
 
 class NavbarUnit extends React.Component {
@@ -22,8 +23,7 @@ class NavbarUnit extends React.Component {
       <Button {...this.props} style={style} color={CSSColor.WHITE}
               fontSize={15} paddingHorizontal={this.props.paddingHorizontal || 8}
               paddingVertical={this.props.paddingVertical}
-              lineHeight={this.props.hasBorder ? 0.4 : undefined}
-              allBorder={this.props.hasBorder}
+              lineHeight={this.props.allBorder ? 0.4 : undefined}
               borderColor={this.props.borderColor}
               borderWidth={this.props.borderWidth}
               borderRadius={this.props.borderRadius}/>
@@ -34,17 +34,14 @@ class NavbarUnit extends React.Component {
 NavbarUnit.propTypes = {
   label: PropTypes.string.isRequired,
   fontWeight: PropTypes.oneOf([100, 200, 300, 400, 500, 600, 700, 800, 900, 'normal', 'bold', 'bolder', 'lighter']),
-  href: PropTypes.string,
-  target: PropTypes.string,
+  ...CommonProps.links,
+  ...CommonProps.borders,
+
   color: PropTypes.string,
   paddingHorizontal: PropTypes.number,
   paddingVertical: PropTypes.number,
-  hasBorder: PropTypes.bool,
-  borderColor: PropTypes.string,
-  borderWidth: PropTypes.number,
-  borderRadius: PropTypes.number,
-  logType: PropTypes.string,
-  logClick: PropTypes.bool,
+
+  ...CommonProps.loggings,
   onClick: PropTypes.func,
   position: PropTypes.oneOf(['left', 'right']),
 };

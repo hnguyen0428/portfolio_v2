@@ -19,7 +19,7 @@ class HeaderText extends React.Component {
                       color="secondary">{this.props.subtitle}</Text> :
                 null
             }
-            <Text weight="bold" size={titleSize}
+            <Text fontWeight="bold" size={titleSize}
                   lineHeight={0.4}>{this.props.title}</Text>
           </Flexbox>
         );
@@ -27,7 +27,7 @@ class HeaderText extends React.Component {
       default:
         return (
           <Flexbox>
-            <Text weight="bold" size={titleSize}
+            <Text fontWeight="bold" size={titleSize}
                   lineHeight={0.4}>{this.props.title}</Text>
             {
               this.props.subtitle ?

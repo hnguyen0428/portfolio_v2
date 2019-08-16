@@ -6,12 +6,21 @@ import MobileHome from './mobile/Home';
 import DesktopHome from './desktop/Home';
 import {isMobileOnly} from 'react-device-detect';
 import * as serviceWorker from './serviceWorker';
+import {Route, HashRouter} from "react-router-dom";
+import history from "./desktop/history";
+import Login from "./desktop/Login";
 
 
 if (isMobileOnly) {
   ReactDOM.render(<MobileHome/>, document.getElementById('root'));
 } else {
-  ReactDOM.render(<DesktopHome/>, document.getElementById('root'));
+  ReactDOM.render(
+    <HashRouter history={history}>
+      <Route exact path={"/"} component={DesktopHome}/>
+      <Route exact path={"/login"} component={Login}/>
+    </HashRouter>,
+    document.getElementById('root')
+  );
 }
 
 
