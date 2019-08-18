@@ -8,6 +8,10 @@ class CSSColor {
     return '#FAFAFA';
   }
 
+  static get LIGHT_WHITE_ALPHA_80() {
+    return 'rgba(250, 250, 250, 0.8)';
+  }
+
   static get GRAY_00() {
     return '#F5F6F7';
   }

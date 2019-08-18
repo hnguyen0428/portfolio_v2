@@ -1,0 +1,16 @@
+.project-card {
+    cursor: pointer;
+}
+
+.project-card-mobile {
+    max-height: 160px;
+}
+
+.project-card-animation {
+    transition: transform .2s ease-in-out;
+}
+
+.project-card-animation:hover {
+    transform: translateY(-3px);
+    -webkit-transform: translateY(-3px);
+}

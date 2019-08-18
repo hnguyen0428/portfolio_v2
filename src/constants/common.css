@@ -12,3 +12,14 @@
 .btnHover:hover {
     opacity: 0.6;
 }
+
+.expand-transition {
+    transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    overflow: hidden;
+}
+
+.expanded-height {
+    max-height: 1000px;
+}

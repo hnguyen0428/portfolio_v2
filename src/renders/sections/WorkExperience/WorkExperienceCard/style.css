@@ -1,0 +1,7 @@
+.work-exp-card {
+    cursor: pointer;
+}
+
+.work-exp-card-mobile {
+    max-height: 100px;
+}
