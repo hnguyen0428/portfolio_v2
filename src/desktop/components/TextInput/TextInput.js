@@ -6,6 +6,7 @@ import '../Text/style.css';
 import './style.css';
 import CSSColor from "../../../constants/CSSColor";
 import CommonProps from "../../common/props";
+import Text from "../Text";
 
 const stylePropType = require('react-style-proptype');
 
@@ -27,9 +28,16 @@ class TextInput extends React.Component {
     }
     style = {...style, ...this.props.style};
 
+    let labelComponent =
+      this.props.label ?
+        <Text color="secondary" fontSize={10}
+              lineHeight={0.2}>{this.props.label}</Text>
+        : null;
+
     if (this.props.textarea) {
       return (
         <Flexbox widthPct={100} heightPct={this.props.fillHeight ? 100 : null}>
+          {labelComponent}
           <textarea style={style} className="text-input stdFont"
                     onChange={this.onChange} rows={this.props.rows || 5}
                     placeholder={this.props.placeholder}
@@ -41,11 +49,13 @@ class TextInput extends React.Component {
     } else {
       return (
         <Flexbox widthPct={100} heightPct={this.props.fillHeight ? 100 : null}>
+          {labelComponent}
           <input style={style} className="text-input stdFont"
                  onChange={this.onChange} placeholder={this.props.placeholder}
                  disabled={this.props.disabled} pattern={this.props.pattern}
                  readOnly={this.props.readOnly} type={this.props.type}
-                 value={this.props.value} autoComplete={this.props.autoComplete}/>
+                 value={this.props.value}
+                 autoComplete={this.props.autoComplete}/>
         </Flexbox>
       );
     }
@@ -60,6 +70,7 @@ TextInput.propTypes = {
   // Dimension applies to text area only
   ...CommonProps.dimensions,
 
+  label: PropTypes.string,
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,
   pattern: PropTypes.string,

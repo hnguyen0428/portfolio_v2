@@ -94,3 +94,13 @@ export function fetchProjectsText(onSuccess, onFailure) {
     })
     .catch(onFailure);
 }
+
+export function updateProjectContent(content, key, onSuccess, onFailure) {
+  if (key === null || key === undefined) {
+    return;
+  }
+  let updates = {};
+  updates[`/profile/projects/objs/${key}`] = content;
+  database.ref().update(updates)
+    .then(onSuccess).catch(onFailure);
+}

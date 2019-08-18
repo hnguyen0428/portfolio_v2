@@ -243,10 +243,8 @@ export default class CommonProps {
     let fontColor = CSSColor.PRIMARY_TEXT;
     if (props.color) {
       if (props.color === 'secondary') {
-        fontSize = '12pt';
         fontColor = CSSColor.SECONDARY_TEXT;
       } else if (props.color === 'primary') {
-        fontSize = '16pt';
         fontColor = CSSColor.PRIMARY_TEXT;
       } else {
         fontColor = props.color;

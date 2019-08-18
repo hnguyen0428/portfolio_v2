@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CSSColor from "../../../constants/CSSColor";
 import Flexbox from "../../components/Flexbox";
 import profile from "../../../static/Profile";
@@ -7,20 +8,15 @@ import Text from "../../components/Text";
 import WorkExperienceCard from "./WorkExperienceCard";
 import TextInput from "../../components/TextInput";
 import {
-  fetchWorkExperienceText,
+  fetchWorkExperienceText, updateWorkExperienceContent,
   updateWorkExperienceText
 } from "../../../firebase/profile";
-import {getEditMode} from "../../common/utils";
-import {fetchLoginState} from "../../../firebase/auth";
-
-const firebase = require('firebase');
 
 
 class WorkExperience extends React.Component {
   constructor(props) {
     super(props);
 
-    let edit = getEditMode();
     let heading = profile.workExperience.heading;
     let text = profile.workExperience.text;
     let objs = profile.workExperience.objs;
@@ -28,8 +24,6 @@ class WorkExperience extends React.Component {
       heading: heading,
       text: text,
       objs: objs,
-      edit: edit,
-      loggedIn: false,
     }
   }
 
@@ -51,7 +45,6 @@ class WorkExperience extends React.Component {
   };
 
   componentWillMount() {
-    fetchLoginState((loggedIn) => this.setState({loggedIn: loggedIn}));
     fetchWorkExperienceText((obj) => {
       this.setState({
         heading: obj.heading || this.state.heading,
@@ -61,8 +54,30 @@ class WorkExperience extends React.Component {
     });
   }
 
+  onChangeDescription = (e, val, dbKey) => {
+    let objs = this.state.objs;
+    objs[dbKey] = {...objs[dbKey], description: val};
+    this.setState({
+      objs: objs,
+    });
+  };
+
+  onChangeTechUsed = (e, val, dbKey) => {
+    let objs = this.state.objs;
+    objs[dbKey] = {...objs[dbKey], techUsed: val};
+    this.setState({
+      objs: objs,
+    });
+  };
+
+  onClickSaveButton = (e, dbKey) => {
+    updateWorkExperienceContent(this.state.objs[dbKey], dbKey, () => {
+    }, (error) => {
+      alert('Error updating work experience card.');
+    });
+  };
+
   render() {
-    let loggedIn = this.state.loggedIn;
     let objs = this.state.objs;
     let keys = Object.keys(this.state.objs);
     keys = keys.sort();
@@ -86,7 +101,11 @@ class WorkExperience extends React.Component {
                     <WorkExperienceCard key={index} dbKey={index}
                                         marginVertical={12}
                                         workExpObj={objs[index]}
-                                        borderRadius={1}/>
+                                        borderRadius={1}
+                                        allowEdit={this.props.allowEdit}
+                                        onChangeDescription={this.onChangeDescription}
+                                        onChangeTechUsed={this.onChangeTechUsed}
+                                        onSave={this.onClickSaveButton}/>
                   );
                 })
               }
@@ -94,7 +113,7 @@ class WorkExperience extends React.Component {
           </Flexbox>
           <Flexbox flexGrow={1} marginLeft={16}>
             {
-              loggedIn && this.state.edit ?
+              this.props.allowEdit ?
                 <TextInput fontSize={20} fontWeight="bold" textarea
                            value={this.state.heading} rows={1}
                            onChange={this.onChangeHeading}/> :
@@ -102,7 +121,7 @@ class WorkExperience extends React.Component {
                       fontWeight="bold">{this.state.heading}</Text>
             }
             {
-              loggedIn && this.state.edit ?
+              this.props.allowEdit ?
                 <TextInput fontSize={13} lineHeight={1.5} textarea
                            value={this.state.text} rows={5}
                            onChange={this.onChangeText} fillHeight/> :
@@ -112,7 +131,7 @@ class WorkExperience extends React.Component {
           </Flexbox>
         </Flexbox>
         {
-          loggedIn && this.state.edit ?
+          this.props.allowEdit ?
             <Flexbox paddingTop={32}>
               <Button label="Update Work Experience" fontSize={18}
                       fontWeight={500} borderColor={CSSColor.BLACK_ALPHA_60}
@@ -126,5 +145,9 @@ class WorkExperience extends React.Component {
     );
   }
 }
+
+WorkExperience.propTypes = {
+  allowEdit: PropTypes.bool,
+};
 
 export default WorkExperience;

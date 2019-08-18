@@ -4,13 +4,13 @@ import CSSColor from "../../../../constants/CSSColor";
 import Flexbox from "../../../components/Flexbox";
 import Card from '../../../components/Card';
 import Button from '../../../components/Button';
-import Image from '../../../components/Image';
 import Text from "../../../components/Text";
 import Modal from '../../../components/Modal';
 import HeaderText from "../../../components/HeaderText";
 import Logger from '../../../../firebase/logger';
 import './style.css';
 import Icon from "../../../components/Icon";
+import TextInput from "../../../components/TextInput";
 
 
 class ProjectCard extends React.Component {
@@ -55,26 +55,86 @@ class ProjectCard extends React.Component {
     e.stopPropagation();
   };
 
+  onChangeLongDesc = (e, val) => {
+    if (this.props.onChangeLongDesc) {
+      this.props.onChangeLongDesc(e, val, this.props.dbKey);
+    }
+  };
+
+  onChangeShortDesc = (e, val) => {
+    if (this.props.onChangeShortDesc) {
+      this.props.onChangeShortDesc(e, val, this.props.dbKey);
+    }
+  };
+
+  onChangeTechUsed = (e, val) => {
+    if (this.props.onChangeTechUsed) {
+      this.props.onChangeTechUsed(e, val, this.props.dbKey);
+    }
+  };
+
+  onSave = (e) => {
+    if (this.props.onSave) {
+      this.props.onSave(e, this.props.dbKey);
+    }
+  };
+
   render() {
     const {title, shortDesc, longDesc, techUsed, repo} = this.props.projectObj;
     let size = "small";
+    let modalContent = null;
+    if (this.props.allowEdit) {
+      modalContent = (
+        <Flexbox heightPct={100} widthPct={100}
+                 minHeight={Modal.modalSizes[size].height}
+                 minWidth={Modal.modalSizes[size].width}>
+          <HeaderText title={title}/>
+          <TextInput color={CSSColor.MODAL_TEXT} textarea minWidth={640}
+                     rows={2} onChange={this.onChangeShortDesc}
+                     value={shortDesc} label="Short Description"/>
+          <TextInput color={CSSColor.MODAL_TEXT} textarea minWidth={640}
+                     rows={10} onChange={this.onChangeLongDesc}
+                     value={longDesc} label="Long Description"/>
+          <TextInput color={CSSColor.MODAL_TEXT} textarea minWidth={640}
+                     rows={1} onChange={this.onChangeTechUsed}
+                     value={techUsed} label="Technologies"/>
+
+          <Flexbox widthPct={100} autoMarginTop flexDirection="row"
+                   justifyContent="flex-end" alignItems="flex-end">
+            {
+              this.props.allowEdit ?
+                <Button label="Save" fontSize={14} lineHeight={0.5}
+                        paddingHorizontal={8}
+                        onClick={this.onSave}/> :
+                null
+            }
+            <Button label="Done" fontSize={14} lineHeight={0.5}
+                    onClick={this.onClickDoneButton}/>
+          </Flexbox>
+        </Flexbox>
+      );
+    } else {
+      modalContent = (
+        <Flexbox heightPct={100} widthPct={100}
+                 minHeight={Modal.modalSizes[size].height}
+                 minWidth={Modal.modalSizes[size].width}>
+          <HeaderText title={title}/>
+          <Text color={CSSColor.MODAL_TEXT}>{longDesc}</Text>
+
+          <Flexbox widthPct={100} autoMarginTop flexDirection="row"
+                   justifyContent="flex-end" alignItems="flex-end">
+            <Button label="Done" fontSize={14} lineHeight={0.5}
+                    onClick={this.onClickDoneButton}/>
+          </Flexbox>
+        </Flexbox>
+      );
+    }
 
     return (
       <div>
         <Modal size={size} show={this.state.showModal}
                onBackdropClick={this.closeModal}>
-          <Flexbox heightPct={100} widthPct={100}
-                   minHeight={Modal.modalSizes[size].height}
-                   minWidth={Modal.modalSizes[size].width}>
-            <HeaderText title={title}/>
-            <Text color={CSSColor.MODAL_TEXT}>{longDesc}</Text>
-
-            <Flexbox widthPct={100} autoMarginTop flexDirection="row"
-                     justifyContent="flex-end" alignItems="flex-end">
-              <Button label="Done" fontSize={14} lineHeight={0.5}
-                      onClick={this.onClickDoneButton}/>
-            </Flexbox>
-          </Flexbox>
+          {modalContent}
         </Modal>
         <Card {...this.props} onClick={this.onClickCard}
               className={this.state.cls}>
@@ -83,7 +143,7 @@ class ProjectCard extends React.Component {
               <Text fontWeight="bold">{title}</Text>
               <Flexbox autoMarginLeft>
                 <Icon src="assets/github_icon_dark.png" href={repo}
-                      target="_blank" size={28}
+                      target="_blank" size={28} className="btnHover"
                       onClick={this.onClickRepoButton} logClick
                       logDescription={"Visited " + title + " Repo"}/>
               </Flexbox>
@@ -100,6 +160,7 @@ class ProjectCard extends React.Component {
 }
 
 ProjectCard.propTypes = {
+  dbKey: PropTypes.string,
   projectObj: PropTypes.shape({
     title: PropTypes.string,
     shortDesc: PropTypes.string,
@@ -108,6 +169,11 @@ ProjectCard.propTypes = {
     repo: PropTypes.string,
   }).isRequired,
   ...Card.propTypes,
+  allowEdit: PropTypes.bool,
+  onChangeLongDesc: PropTypes.func,
+  onChangeShortDesc: PropTypes.func,
+  onChangeTechUsed: PropTypes.func,
+  onSave: PropTypes.func,
 };
 
 

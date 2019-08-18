@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CSSColor from "../../../constants/CSSColor";
 import Flexbox from "../../components/Flexbox";
 import ProfileImage from "../../components/ProfileImage";
@@ -9,20 +10,16 @@ import {fetchProfileText, updateProfileText} from "../../../firebase/profile";
 import TextInput from "../../components/TextInput";
 import {getEditMode} from "../../common/utils";
 import {fetchLoginState} from "../../../firebase/auth";
-const firebase = require('firebase');
 
 class AboutMe extends React.Component {
   constructor(props) {
     super(props);
 
-    let edit = getEditMode();
     let heading = profile.aboutMe.heading;
     let text = profile.aboutMe.text;
     this.state = {
       heading: heading,
       text: text,
-      edit: edit,
-      loggedIn: false,
     }
   }
 
@@ -44,7 +41,6 @@ class AboutMe extends React.Component {
   };
 
   componentWillMount() {
-    fetchLoginState((loggedIn) => this.setState({loggedIn: loggedIn}));
     fetchProfileText((obj) => {
       this.setState({
         heading: obj.heading || this.state.heading,
@@ -54,8 +50,6 @@ class AboutMe extends React.Component {
   }
 
   render() {
-    let loggedIn = this.state.loggedIn;
-
     return (
       <Flexbox backgroundColor={CSSColor.LIGHT_WHITE} widthPct={100}
                alignItems="center" paddingVertical={64}>
@@ -76,7 +70,7 @@ class AboutMe extends React.Component {
           </Flexbox>
           <Flexbox flexDirection="column" flexGrow={1}>
             {
-              loggedIn && this.state.edit ?
+              this.props.allowEdit ?
                 <TextInput fontSize={20} fontWeight="bold" textarea
                            value={this.state.heading} rows={1}
                            onChange={this.onChangeHeading}/> :
@@ -84,7 +78,7 @@ class AboutMe extends React.Component {
                       fontWeight="bold">{this.state.heading}</Text>
             }
             {
-              loggedIn && this.state.edit ?
+              this.props.allowEdit ?
                 <TextInput fontSize={13} lineHeight={1.5} textarea
                            value={this.state.text} rows={15}
                            onChange={this.onChangeText} fillHeight/> :
@@ -94,7 +88,7 @@ class AboutMe extends React.Component {
           </Flexbox>
         </Flexbox>
         {
-          loggedIn && this.state.edit ?
+          this.props.allowEdit ?
             <Flexbox paddingTop={32}>
               <Button label="Update About Me" fontSize={18} fontWeight={500}
                       borderColor={CSSColor.BLACK_ALPHA_60} borderWidth={2}
@@ -107,5 +101,9 @@ class AboutMe extends React.Component {
     );
   }
 }
+
+AboutMe.propTypes = {
+  allowEdit: PropTypes.bool,
+};
 
 export default AboutMe;

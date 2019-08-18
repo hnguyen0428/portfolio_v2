@@ -57,12 +57,6 @@ const profile = {
           "programming assignments, where I had to check if their code followed the style guidelines.",
         techUsed: "Python",
         repo: "https://github.com/hnguyen0428/style_checker",
-        date: "April 2019",
-        demoLink: null,
-        hasDemo: false,
-        medias: null,
-        mediaDescriptions: [],
-        mediaTypes: []
       },
       1: {
         title: "CodeSnippler",
@@ -76,12 +70,6 @@ const profile = {
           "feed.",
         techUsed: "React Spring MongoDB",
         repo: "https://github.com/hnguyen0428/code-snippler",
-        date: "September 2018",
-        demoLink: "https://code-snippler.herokuapp.com",
-        hasDemo: false,
-        medias: null,
-        mediaDescriptions: [],
-        mediaTypes: []
       },
       2: {
         title: "GroupPlanner",
@@ -95,34 +83,6 @@ const profile = {
           "Won CodePath Best in Show and Best App Idea award.",
         techUsed: "Swift OAuth Parse",
         repo: "https://github.com/hecs-software/group-planner",
-        date: "May 2018",
-        demoLink: null,
-        hasDemo: true,
-        medias: [
-          "assets/demos/groupplanner/mycalendar.PNG",
-          "assets/demos/groupplanner/grouplist.PNG",
-          "assets/demos/groupplanner/createnewgroup.PNG",
-          "assets/demos/groupplanner/groupcalendar.PNG",
-          "assets/demos/groupplanner/timematcher.PNG"
-        ],
-        mediaDescriptions: [
-          'Google Calendar of the logged in user with the events pulled from Google API',
-          'This page shows all the groups that the user is currently in. From this page, the user can press the + sign to ' +
-          'create a new group or view the group details by clicking on one of the groups.',
-          'To create a group, the user simply decides a name and has the option to invite their friends now or later.',
-          'This is the group calendar where all users\' events inside the group are pulled and displayed. The event details ' +
-          'are hidden and only displayed as shaded. The user can toggle which users\' events to display by tapping on their ' +
-          'profile pictures at the bottom. From here, the user can tap on the top right icon to go to the time matcher.',
-          'In the time matcher, the user can see what time everyone is available by looking at the green shaded area. ' +
-          'Again, the user can toggle which users to include in the time matching by toggling them at the bottom.'
-        ],
-        mediaTypes: [
-          'image',
-          'image',
-          'image',
-          'image',
-          'image'
-        ]
       },
       3: {
         title: "GuitarTuner",
@@ -133,23 +93,6 @@ const profile = {
           "on the audio signal captured by the phone in order to determine the frequency of the note being played.\n",
         techUsed: "Swift",
         repo: "https://github.com/hnguyen0428/GuitarTuner",
-        date: "December 2017",
-        demoLink: null,
-        hasDemo: true,
-        medias: [
-          "assets/demos/guitartuner/homepage.PNG",
-          "assets/demos/guitartuner/GuitarTunerDemo.mov",
-        ],
-        mediaDescriptions: [
-          'This is the front page of the app, which shows all the supported types of tuning.',
-          'Once the user starts tuning, they can pick which string to tune and plays the string. The microphone will pick ' +
-          'up the tone and calculate the frequency and determine whether the string is in tune. The meter will appear ' +
-          'green once the string is in tune.'
-        ],
-        mediaTypes: [
-          'image',
-          'video'
-        ]
       },
     },
     heading: "Some Projects I've Worked On",

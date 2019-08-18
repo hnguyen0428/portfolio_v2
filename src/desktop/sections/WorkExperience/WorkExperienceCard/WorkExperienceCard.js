@@ -10,12 +10,6 @@ import Modal from '../../../components/Modal';
 import HeaderText from "../../../components/HeaderText";
 import Logger from '../../../../firebase/logger';
 import './style.css';
-import {fetchLoginState} from "../../../../firebase/auth";
-import {
-  fetchWorkExperienceText,
-  updateWorkExperienceContent
-} from "../../../../firebase/profile";
-import {getEditMode} from "../../../common/utils";
 import TextInput from "../../../components/TextInput";
 
 
@@ -23,12 +17,8 @@ class WorkExperienceCard extends React.Component {
   constructor(props) {
     super(props);
 
-    let edit = getEditMode();
     this.state = {
       showModal: false,
-      obj: this.props.workExpObj,
-      loggedIn: false,
-      edit: edit,
     }
   }
 
@@ -52,70 +42,73 @@ class WorkExperienceCard extends React.Component {
     })
   };
 
-  onChangeText = (e, val) => {
-    this.setState({
-      obj: {
-        ...this.state.obj,
-        description: val,
-      }
-    });
-  };
-
-  onClickSaveButton = (e) => {
-    // Update About Me info
-    updateWorkExperienceContent(this.state.obj, this.props.dbKey, () => {
-    }, (error) => {
-      alert('Error updating work experience card.');
-    });
-  };
-
   onClickDoneButton = (e) => {
     this.closeModal();
   };
 
-  componentWillMount() {
-    fetchLoginState((loggedIn) => this.setState({loggedIn: loggedIn}));
-    fetchWorkExperienceText((obj) => {
-      this.setState({
-        objs: obj.objs || this.state.objs,
-      });
-    });
-  }
+  onChangeDescription = (e, val) => {
+    if (this.props.onChangeDescription) {
+      this.props.onChangeDescription(e, val, this.props.dbKey);
+    }
+  };
+
+  onChangeTechUsed = (e, val) => {
+    if (this.props.onChangeTechUsed) {
+      this.props.onChangeTechUsed(e, val, this.props.dbKey);
+    }
+  };
+
+  onSave = (e) => {
+    if (this.props.onSave) {
+      this.props.onSave(e, this.props.dbKey);
+    }
+  };
 
   render() {
-    const {name, title, date, description, techUsed, logo} = this.state.obj;
+    const {name, title, date, description, techUsed, logo} = this.props.workExpObj;
     let header = name + ' - ' + title;
     let subtitle = date;
+    let size = "small";
 
     return (
       <div>
         <Modal size="medium" show={this.state.showModal}
                onBackdropClick={this.closeModal}>
-          <Flexbox heightPct={100} widthPct={100}>
+          <Flexbox heightPct={100} widthPct={100}
+                   minHeight={Modal.modalSizes[size].height}
+                   minWidth={Modal.modalSizes[size].width}>
             <HeaderText title={header} subtitle={subtitle}/>
             {
-              this.state.loggedIn && this.state.edit ?
+              this.props.allowEdit ?
                 <TextInput color={CSSColor.MODAL_TEXT} value={description}
-                           textarea minWidth={640}
-                           rows={17} onChange={this.onChangeText}/> :
+                           textarea minWidth={640} label="Description"
+                           rows={17} onChange={this.onChangeDescription}/> :
                 <Text color={CSSColor.MODAL_TEXT}
                       fontSize={12}>{description}</Text>
             }
 
-            <Flexbox widthPct={100} heightPct={100} autoMarginTop
-                     flexDirection="row" alignItems="flex-end">
-              <HeaderText title={techUsed} subtitle={"Technologies Used:"}
-                          type="title_below" titleSize={12}
-                          subtitleSize={12}/>
+            <Flexbox widthPct={100} heightPct={100}
+                     justifyContent="flex-end">
+              {
+                this.props.allowEdit ?
+                  <TextInput value={techUsed} fontWeight="bold"
+                             lineHeight={0.4}
+                             onChangeTechUsed={this.onChangeTechUsed}
+                             label="Technologies"/>
+                  :
+                  <Flexbox className="btnHover">
+                    <Text fontWeight={500} lineHeight={0.4}>{techUsed}</Text>
+                  </Flexbox>
+              }
             </Flexbox>
 
             <Flexbox widthPct={100} autoMarginTop flexDirection="row"
                      justifyContent="flex-end">
               {
-                this.state.loggedIn && this.state.edit ?
+                this.props.allowEdit ?
                   <Button label="Save" fontSize={14} lineHeight={0.5}
                           paddingHorizontal={8}
-                          onClick={this.onClickSaveButton}/> :
+                          onClick={this.onSave}/> :
                   null
               }
               <Button label="Done" fontSize={14} lineHeight={0.5}
@@ -146,6 +139,10 @@ WorkExperienceCard.propTypes = {
     logo: PropTypes.string,
   }).isRequired,
   ...Card.propTypes,
+  allowEdit: PropTypes.bool,
+  onChangeDescription: PropTypes.func,
+  onChangeTechUsed: PropTypes.func,
+  onSave: PropTypes.func,
 };
 
 

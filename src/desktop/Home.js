@@ -14,17 +14,18 @@ import style from './style';
 import AboutMe from "./sections/AboutMe";
 import WorkExperience from "./sections/WorkExperience";
 import Projects from "./sections/Projects";
-import {logout} from "../firebase/auth";
-
-const firebase = require('firebase');
+import {logout, fetchLoginState} from "../firebase/auth";
+import {getEditMode} from "./common/utils";
 
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
 
+    let edit = getEditMode();
     this.state = {
       loggedIn: false,
+      edit: edit,
     };
   }
 
@@ -41,13 +42,7 @@ class Home extends React.Component {
   }
 
   componentWillMount() {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({loggedIn: true});
-      } else {
-        this.setState({loggedIn: false});
-      }
-    });
+    fetchLoginState((loggedIn) => this.setState({loggedIn: loggedIn}));
   }
 
   onClickLogout = (e) => {
@@ -59,7 +54,7 @@ class Home extends React.Component {
   };
 
   render() {
-    let loggedIn = this.state.loggedIn;
+    let allowEdit = this.state.loggedIn && this.state.edit;
 
     let root = process.env.NODE_ENV === 'development' ? '/' : '/portfolio/';
     return (
@@ -68,7 +63,7 @@ class Home extends React.Component {
           <NavbarUnit label="Daniel Nguyen" position="left" fontWeight={500}
                       paddingHorizontal={16} href={root}/>
           {
-            loggedIn ?
+            this.state.loggedIn ?
               <NavbarUnit label="Logout" onClick={this.onClickLogout}
                           paddingHorizontal={16}/> :
               null
@@ -87,9 +82,9 @@ class Home extends React.Component {
                           logClick={true} logDescription="Visited Facebook"/>
         </Navbar>
 
-        <AboutMe/>
-        <WorkExperience/>
-        <Projects/>
+        <AboutMe allowEdit={allowEdit}/>
+        <WorkExperience allowEdit={allowEdit}/>
+        <Projects allowEdit={allowEdit}/>
       </Flexbox>
     );
   }

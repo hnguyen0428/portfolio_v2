@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CSSColor from "../../../constants/CSSColor";
 import Flexbox from "../../components/Flexbox";
 import profile from "../../../static/Profile";
@@ -6,18 +7,16 @@ import Button from '../../components/Button';
 import Text from "../../components/Text";
 import ProjectCard from "./ProjectCard";
 import TextInput from "../../components/TextInput";
-import {getEditMode} from "../../common/utils";
-import {fetchProjectsText, updateProjectsText} from "../../../firebase/profile";
-import {fetchLoginState} from "../../../firebase/auth";
-
-const firebase = require('firebase');
+import {
+  fetchProjectsText, updateProjectContent,
+  updateProjectsText,
+} from "../../../firebase/profile";
 
 
 class Projects extends React.Component {
   constructor(props) {
     super(props);
 
-    let edit = getEditMode();
     let heading = profile.projects.heading;
     let text = profile.projects.text;
     let objs = profile.projects.objs;
@@ -25,8 +24,6 @@ class Projects extends React.Component {
       heading: heading,
       text: text,
       objs: objs,
-      edit: edit,
-      loggedIn: false,
     }
   }
 
@@ -47,17 +44,47 @@ class Projects extends React.Component {
   };
 
   componentWillMount() {
-    fetchLoginState((loggedIn) => this.setState({loggedIn: loggedIn}));
     fetchProjectsText((obj) => {
       this.setState({
         heading: obj.heading || this.state.heading,
         text: obj.text || this.state.text,
+        objs: obj.objs || this.state.objs,
       });
     });
   }
 
+  onChangeLongDesc = (e, val, dbKey) => {
+    let objs = this.state.objs;
+    objs[dbKey] = {...objs[dbKey], longDesc: val};
+    this.setState({
+      objs: objs,
+    });
+  };
+
+  onChangeShortDesc = (e, val, dbKey) => {
+    let objs = this.state.objs;
+    objs[dbKey] = {...objs[dbKey], shortDesc: val};
+    this.setState({
+      objs: objs,
+    });
+  };
+
+  onChangeTechUsed = (e, val, dbKey) => {
+    let objs = this.state.objs;
+    objs[dbKey] = {...objs[dbKey], techUsed: val};
+    this.setState({
+      objs: objs,
+    });
+  };
+
+  onClickSaveButton = (e, dbKey) => {
+    updateProjectContent(this.state.objs[dbKey], dbKey, () => {
+    }, (error) => {
+      alert('Error updating work experience card.');
+    });
+  };
+
   render() {
-    let loggedIn = this.state.loggedIn;
     let objs = this.state.objs;
     let keys = Object.keys(this.state.objs);
     keys = keys.sort();
@@ -70,7 +97,7 @@ class Projects extends React.Component {
                  justifyContent="center">
           <Flexbox minWidth={320} maxWidth={320}>
             {
-              loggedIn && this.state.edit ?
+              this.props.allowEdit ?
                 <TextInput fontSize={20} fontWeight="bold" textarea
                            value={this.state.heading} rows={2}
                            onChange={this.onChangeHeading}/> :
@@ -78,7 +105,7 @@ class Projects extends React.Component {
                       fontWeight="bold">{this.state.heading}</Text>
             }
             {
-              loggedIn && this.state.edit ?
+              this.props.allowEdit ?
                 <TextInput fontSize={13} lineHeight={1.5} textarea
                            value={this.state.text} rows={7}
                            onChange={this.onChangeText} fillHeight/> :
@@ -91,18 +118,23 @@ class Projects extends React.Component {
             {
               keys.map((index) => {
                 return (
-                  <ProjectCard key={index}
+                  <ProjectCard key={index} dbKey={index}
                                marginVertical={12} marginHorizontal={12}
                                projectObj={objs[index]} width={272} height={150}
                                paddingHorizontal={16} paddingVertical={8}
-                               borderRadius={1}/>
+                               borderRadius={1}
+                               allowEdit={this.props.allowEdit}
+                               onChangeLongDesc={this.onChangeLongDesc}
+                               onChangeShortDesc={this.onChangeShortDesc}
+                               onChangeTechUsed={this.onChangeTechUsed}
+                               onSave={this.onClickSaveButton}/>
                 );
               })
             }
           </Flexbox>
         </Flexbox>
         {
-          loggedIn && this.state.edit ?
+          this.props.allowEdit ?
             <Flexbox paddingTop={32}>
               <Button label="Update Projects" fontSize={18}
                       fontWeight={500} borderColor={CSSColor.BLACK_ALPHA_60}
@@ -116,5 +148,9 @@ class Projects extends React.Component {
     );
   }
 }
+
+Projects.propTypes = {
+  allowEdit: PropTypes.bool,
+};
 
 export default Projects;
