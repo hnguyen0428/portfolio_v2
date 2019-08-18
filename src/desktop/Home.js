@@ -1,13 +1,9 @@
 import React from 'react';
 import Logger from '../firebase/logger';
-import CSSColor from '../constants/CSSColor';
 import Flexbox from './components/Flexbox';
 import Navbar from './components/Navbar';
 import NavbarUnit from './components/NavbarUnit';
 import NavbarUnitIcon from './components/NavbarUnitIcon';
-import Text from './components/Text';
-import Card from './components/Card';
-import ProfileImage from './components/ProfileImage';
 import profile from '../static/Profile';
 
 import style from './style';

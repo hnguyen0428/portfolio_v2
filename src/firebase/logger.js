@@ -1,4 +1,5 @@
 import {database} from '../config/firebase';
+import {fetchLoginState} from "./auth";
 import moment from 'moment';
 import {
   isMobile,
@@ -26,14 +27,19 @@ class Logger {
   }
 
   static genLog(data, onSuccess, onFailure) {
-    let extraData = this.getExtraData();
-    data = {
-      ...extraData,
-      ...data
-    };
+    fetchLoginState((loggedIn) => {
+      // Only log if not logged in
+      if (!loggedIn) {
+        let extraData = this.getExtraData();
+        data = {
+          ...extraData,
+          ...data
+        };
 
-    database.ref('actions').push(data)
-      .then(onSuccess).catch(onFailure)
+        database.ref('actions').push(data)
+          .then(onSuccess).catch(onFailure)
+      }
+    });
   }
 }
 
