@@ -35,7 +35,7 @@ class Login extends React.Component {
 
   onClickLogin = (e) => {
     // Firebase login
-    let root = process.env.NODE_ENV === 'development' ? '/#/?edit=true' : '/portfolio/#/?edit=true';
+    let root = process.env.NODE_ENV === 'development' ? '/?edit=true' : '/portfolio/?edit=true';
     loginWithEmail(this.state.email, this.state.password, (user) => {
       history.push(root);
     }, (error) => {
