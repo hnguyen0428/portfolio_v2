@@ -13,6 +13,7 @@ import './style.css';
 import "../../../../constants/common.css";
 import Icon from "../../../components/Icon";
 import TextInput from "../../../components/TextInput";
+import {View, ScrollView} from "react-native-web";
 
 
 class ProjectCard extends ReactComponent {
@@ -123,46 +124,50 @@ class ProjectCard extends ReactComponent {
     const {title, shortDesc, longDesc, techUsed, repo} = this.props.projectObj;
     const {expanded, expandClass, showExtraContent} = this.state;
     let cls = expandClass ?
-      "expand-transition expanded-height" :
-      "project-card-mobile expand-transition";
+      "project-card-overflow expand-transition expanded-height" :
+      "project-card-overflow project-card-mobile expand-transition";
 
     let extraContent = (
-      <div>
-        <Text>{longDesc}</Text>
-        <Flexbox autoMarginTop className="btnHover">
+      <Flexbox flexShrink={100}>
+        <Text className="unselectable">{longDesc}</Text>
+        <Flexbox className="btnHover">
           <Text fontWeight={500} lineHeight={0.4}>{techUsed}</Text>
         </Flexbox>
-        <Flexbox widthPct={100} alignItems="flex-end">
+        <Flexbox widthPct={100} alignItems="flex-end" overflow="hidden">
           <Button label="Close" fontSize={14} lineHeight={0.5}
                   paddingHorizontal={8}
                   onClick={this.onClickCloseButtonMobile}/>
         </Flexbox>
-      </div>
+      </Flexbox>
     );
 
     return (
-      <Card id={this.props.id} {...this.props} onClick={this.onClickCardMobile}
-            className={cls} onTransitionEnd={this.onTransitionEndMobile}>
-        <Flexbox widthPct={100} flexDirection="row">
-          <Text fontWeight="bold">{title}</Text>
-          <Flexbox autoMarginLeft>
-            <Icon src="assets/github_icon_dark.png" href={repo}
-                  target="_blank" size={28} className="btnHover"
-                  onClick={this.onClickRepoButton} logClick
-                  logDescription={"Visited " + title + " Repo"}/>
-          </Flexbox>
-        </Flexbox>
-        <Text>{shortDesc}</Text>
-        {
-          showExtraContent
-            ? extraContent
-            :
-            <Flexbox autoMarginTop className="btnHover">
-              <Text fontWeight={500} lineHeight={0.4}>{techUsed}</Text>
+      <div>
+        <Card id={this.props.id} {...this.props} onClick={this.onClickCardMobile}
+              className={cls} onTransitionEnd={this.onTransitionEndMobile}>
+          <Flexbox widthPct={100} flexShrink={0} flexDirection="row">
+            <Text fontWeight="bold">{title}</Text>
+            <Flexbox autoMarginLeft>
+              <Icon src="assets/github_icon_dark.png" href={repo}
+                    target="_blank" size={28} className="btnHover"
+                    onClick={this.onClickRepoButton} logClick
+                    logDescription={"Visited " + title + " Repo"}/>
             </Flexbox>
-        }
+          </Flexbox>
+          <Flexbox flexShrink={0}>
+            <Text className="unselectable">{shortDesc}</Text>
+          </Flexbox>
 
-      </Card>
+          {
+            showExtraContent
+              ? extraContent
+              :
+              <Flexbox className="btnHover">
+                <Text fontWeight={500} lineHeight={0.4}>{techUsed}</Text>
+              </Flexbox>
+          }
+        </Card>
+      </div>
     );
   }
 

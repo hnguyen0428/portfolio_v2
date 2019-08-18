@@ -4,6 +4,7 @@ import Logger from '../../../firebase/logger';
 import './style.css';
 import CSSColor from "../../../constants/CSSColor";
 import CommonProps from "../../../common/props";
+import Flexbox from "../Flexbox";
 
 const stylePropType = require('react-style-proptype');
 
@@ -116,9 +117,9 @@ class Text extends React.Component {
     }
 
     return (
-      <div onClick={this.props.onClick}>
+      <Flexbox onClick={this.props.onClick}>
         {headingComponent}
-      </div>
+      </Flexbox>
     );
   }
 }

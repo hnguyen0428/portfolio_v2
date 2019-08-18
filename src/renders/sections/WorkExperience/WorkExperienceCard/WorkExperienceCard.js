@@ -110,8 +110,8 @@ class WorkExperienceCard extends ReactComponent {
     let header = name + ' - ' + title;
     let subtitle = date;
     let cls = expandClass ?
-      "expand-transition expanded-height" :
-      "work-exp-card-mobile expand-transition";
+      "work-exp-card-overflow expand-transition expanded-height" :
+      "work-exp-card-overflow work-exp-card-mobile expand-transition";
 
     return (
       <div>
@@ -123,11 +123,10 @@ class WorkExperienceCard extends ReactComponent {
           </Flexbox>
           {
             showExtraContent ?
-              <Flexbox paddingHorizontal={16} paddingBottom={8}>
+              <Flexbox flexShrink={100} paddingHorizontal={16} paddingBottom={8}>
                 <Text fontWeight="bold" lineHeight={1.2}>{header}</Text>
                 <Text lineHeight={0.4}>{subtitle}</Text>
-                <Text color={CSSColor.MODAL_TEXT}
-                      fontSize={12}>{description}</Text>
+                <Text fontSize={12}>{description}</Text>
                 <Flexbox className="btnHover">
                   <Text fontWeight={500} lineHeight={0.4}>{techUsed}</Text>
                 </Flexbox>

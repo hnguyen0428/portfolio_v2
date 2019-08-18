@@ -5,3 +5,7 @@
 .work-exp-card-mobile {
     max-height: 100px;
 }
+
+.work-exp-card-overflow {
+    overflow: hidden;
+}

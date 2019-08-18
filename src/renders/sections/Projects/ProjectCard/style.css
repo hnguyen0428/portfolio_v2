@@ -6,6 +6,10 @@
     max-height: 160px;
 }
 
+.project-card-overflow {
+    overflow: hidden;
+}
+
 .project-card-animation {
     transition: transform .2s ease-in-out;
 }

@@ -28,11 +28,8 @@ class Flexbox extends React.Component {
   render() {
     let style = {
       backgroundColor: this.props.backgroundColor,
-      wordWrap: 'break-word',
+      overflow: this.props.overflow,
     };
-    if (this.props.hidden) {
-      style = {...style, display: 'none'};
-    }
 
     style = CommonProps.setFlexbox(style, this.props);
     style = CommonProps.setAlignments(style, this.props);
@@ -40,6 +37,10 @@ class Flexbox extends React.Component {
     style = CommonProps.setMargins(style, this.props);
     style = CommonProps.setDimensions(style, this.props);
     style = CommonProps.setBorders(style, this.props);
+
+    if (this.props.hidden) {
+      style = {...style, display: 'none'};
+    }
 
     if (this.props.href) {
       // Use <a> as a flexbox to make the whole box hyperlinked
@@ -75,6 +76,7 @@ Flexbox.propTypes = {
   ...CommonProps.links,
 
   hidden: PropTypes.bool,
+  overflow: PropTypes.string,
   backgroundColor: PropTypes.string,
   onClick: PropTypes.func,
   onAnimationEnd: PropTypes.func,
