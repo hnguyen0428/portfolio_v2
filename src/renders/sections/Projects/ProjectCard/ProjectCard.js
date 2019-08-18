@@ -55,6 +55,10 @@ class ProjectCard extends ReactComponent {
   };
 
   onClickCardMobile = (e) => {
+    if (this.state.expanded) {
+      return;
+    }
+
     this.setState({expandClass: true, showExtraContent: true});
     const {title} = this.props.projectObj;
 

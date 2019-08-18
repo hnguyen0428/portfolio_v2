@@ -50,6 +50,10 @@ class WorkExperienceCard extends ReactComponent {
   };
 
   onClickCardMobile = (e) => {
+    if (this.state.expanded) {
+      return;
+    }
+
     this.setState({expandClass: true, showExtraContent: true});
     const {name} = this.props.workExpObj;
 

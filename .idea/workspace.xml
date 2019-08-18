@@ -2,74 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="406d95e0-2826-4a31-966f-0247bf8304d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/renders/ReactComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renders/components/NavbarUnitIcon/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renders/sections/Contacts/Contacts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renders/sections/Contacts/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renders/sections/Contacts/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/CSSColor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/CSSColor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/common/props.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/props.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/common/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Button/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Button/Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Button/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Button/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Button/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Button/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Card/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Card/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Card/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Card/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Card/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Card/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Flexbox/Flexbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Flexbox/Flexbox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Flexbox/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Flexbox/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Flexbox/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Flexbox/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/HeaderText/HeaderText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/HeaderText/HeaderText.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/HeaderText/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/HeaderText/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Icon/Icon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Icon/Icon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Icon/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Icon/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Icon/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Icon/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Image/Image.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Image/Image.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Image/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Image/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Image/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Image/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Modal/Modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Modal/Modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Modal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Modal/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Modal/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Modal/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Navbar/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Navbar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Navbar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Navbar/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Navbar/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Navbar/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Navbar/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/NavbarUnit/NavbarUnit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/NavbarUnit/NavbarUnit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/NavbarUnit/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/NavbarUnit/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/NavbarUnit/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/NavbarUnit/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/NavbarUnitIcon/NavbarUnitIcon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/NavbarUnitIcon/NavbarUnitIcon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/NavbarUnitIcon/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/NavbarUnitIcon/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/NavbarUnitIcon/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/ProfileImage/ProfileImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/ProfileImage/ProfileImage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/ProfileImage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/ProfileImage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/ProfileImage/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/ProfileImage/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Text/Text.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Text/Text.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Text/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Text/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/Text/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Text/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/TextInput/TextInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/TextInput/TextInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/TextInput/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/TextInput/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/TextInput/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/TextInput/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/history.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/sections/AboutMe/AboutMe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/AboutMe/AboutMe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/sections/AboutMe/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/AboutMe/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/sections/Projects/ProjectCard/ProjectCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/sections/Projects/ProjectCard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/sections/Projects/ProjectCard/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/sections/Projects/Projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/Projects/Projects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/sections/Projects/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/Projects/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/sections/WorkExperience/WorkExperience.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperience.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/sections/WorkExperience/WorkExperienceCard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/sections/WorkExperience/WorkExperienceCard/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/sections/WorkExperience/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/WorkExperience/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/style.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/Home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/renders/sections/Contacts/Contacts.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="28" column="78" lean-forward="true" selection-start-line="28" selection-start-column="78" selection-end-line="28" selection-end-column="78" />
+              <caret line="28" column="78" selection-start-line="28" selection-start-column="78" selection-end-line="28" selection-end-column="78" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -119,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/src/renders/components/NavbarUnitIcon/NavbarUnitIcon.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="235">
-              <caret line="20" column="72" lean-forward="true" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
+              <caret line="20" column="72" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -153,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="150" column="32" selection-start-line="150" selection-start-column="32" selection-end-line="150" selection-end-column="32" />
+            <state relative-caret-position="500">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -178,10 +112,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/style.css">
+        <entry file="file://$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="328">
+              <caret line="55" selection-start-line="55" selection-end-line="55" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -255,18 +192,18 @@
         <option value="$PROJECT_DIR$/src/renders/components/Flexbox/Flexbox.js" />
         <option value="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperience.js" />
         <option value="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/style.css" />
-        <option value="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" />
         <option value="$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/style.css" />
         <option value="$PROJECT_DIR$/src/constants/common.css" />
         <option value="$PROJECT_DIR$/src/renders/sections/Projects/Projects.js" />
         <option value="$PROJECT_DIR$/src/renders/sections/AboutMe/AboutMe.js" />
-        <option value="$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js" />
         <option value="$PROJECT_DIR$/src/renders/sections/Contacts/style.css" />
         <option value="$PROJECT_DIR$/src/renders/sections/Contacts/index.js" />
         <option value="$PROJECT_DIR$/src/renders/Home.js" />
         <option value="$PROJECT_DIR$/src/renders/components/NavbarUnitIcon/NavbarUnitIcon.js" />
         <option value="$PROJECT_DIR$/src/constants/CSSColor.js" />
         <option value="$PROJECT_DIR$/src/renders/sections/Contacts/Contacts.js" />
+        <option value="$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js" />
+        <option value="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" />
       </list>
     </option>
   </component>
@@ -545,12 +482,12 @@
       <option name="presentableId" value="Default" />
       <updated>1565470391923</updated>
       <workItem from="1565470394508" duration="74780000" />
-      <workItem from="1565859292292" duration="44373000" />
+      <workItem from="1565859292292" duration="44693000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119153000" />
+    <option name="totallyTimeSpent" value="119473000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -565,7 +502,7 @@
     <frame x="54" y="23" width="1626" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28914142" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28914142" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -583,7 +520,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="TypeScript" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3304813" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3304813" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -895,16 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-178">
-          <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/constants/common.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -926,16 +853,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="150" column="32" selection-start-line="150" selection-start-column="32" selection-end-line="150" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/renders/sections/Contacts/style.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -952,17 +869,7 @@
     <entry file="file://$PROJECT_DIR$/src/renders/components/NavbarUnitIcon/NavbarUnitIcon.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
-          <caret line="20" column="72" lean-forward="true" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/renders/sections/AboutMe/AboutMe.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="74" column="12" selection-start-line="74" selection-start-column="12" selection-end-line="81" selection-end-column="22" />
+          <caret line="20" column="72" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -989,7 +896,37 @@
     <entry file="file://$PROJECT_DIR$/src/renders/sections/Contacts/Contacts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="28" column="78" lean-forward="true" selection-start-line="28" selection-start-column="78" selection-end-line="28" selection-end-column="78" />
+          <caret line="28" column="78" selection-start-line="28" selection-start-column="78" selection-end-line="28" selection-end-column="78" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/renders/sections/AboutMe/AboutMe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="74" column="12" selection-start-line="74" selection-start-column="12" selection-end-line="81" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
