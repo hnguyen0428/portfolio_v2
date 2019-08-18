@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Flexbox from '../Flexbox';
 import '../Text/style.css';
 import './style.css';
-import CSSColor from "../../../constants/CSSColor";
 import CommonProps from "../../../common/props";
 import Text from "../Text";
 

@@ -10,10 +10,10 @@ import Modal from '../../../components/Modal';
 import HeaderText from "../../../components/HeaderText";
 import Logger from '../../../../firebase/logger';
 import './style.css';
+
 import "../../../../constants/common.css";
 import Icon from "../../../components/Icon";
 import TextInput from "../../../components/TextInput";
-import {View, ScrollView} from "react-native-web";
 
 
 class ProjectCard extends ReactComponent {
@@ -129,7 +129,7 @@ class ProjectCard extends ReactComponent {
 
     let extraContent = (
       <Flexbox flexShrink={100}>
-        <Text className="unselectable">{longDesc}</Text>
+        <Text>{longDesc}</Text>
         <Flexbox className="btnHover">
           <Text fontWeight={500} lineHeight={0.4}>{techUsed}</Text>
         </Flexbox>
@@ -155,7 +155,7 @@ class ProjectCard extends ReactComponent {
             </Flexbox>
           </Flexbox>
           <Flexbox flexShrink={0}>
-            <Text className="unselectable">{shortDesc}</Text>
+            <Text>{shortDesc}</Text>
           </Flexbox>
 
           {

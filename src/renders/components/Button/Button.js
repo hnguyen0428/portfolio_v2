@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 import CSSColor from "../../../constants/CSSColor";
 import Flexbox from "../../components/Flexbox";
 import Text from "../../components/Text";
-import './style.css';
+import '../../../constants/common.css';
 import CommonProps from "../../../common/props";
-
-const stylePropType = require('react-style-proptype');
 
 class Button extends React.Component {
   onClick = (e) => {

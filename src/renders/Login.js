@@ -4,7 +4,6 @@ import Flexbox from './components/Flexbox';
 import Navbar from './components/Navbar';
 import NavbarUnit from './components/NavbarUnit';
 import NavbarUnitIcon from './components/NavbarUnitIcon';
-import Text from './components/Text';
 import TextInput from './components/TextInput';
 import profile from '../static/Profile';
 
