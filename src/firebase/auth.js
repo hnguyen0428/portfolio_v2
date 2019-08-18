@@ -3,7 +3,7 @@ const firebase = require('firebase');
 
 
 export function loginWithEmail(email, password, onSuccess, onFailure) {
-  auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
+  auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL)
     .then(() => {
       auth.signInWithEmailAndPassword(email, password)
         .then((user => {
