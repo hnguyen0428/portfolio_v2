@@ -93,7 +93,7 @@ class WorkExperienceCard extends React.Component {
                 this.props.allowEdit ?
                   <TextInput value={techUsed} fontWeight="bold"
                              lineHeight={0.4}
-                             onChangeTechUsed={this.onChangeTechUsed}
+                             onChange={this.onChangeTechUsed}
                              label="Technologies"/>
                   :
                   <Flexbox className="btnHover">
