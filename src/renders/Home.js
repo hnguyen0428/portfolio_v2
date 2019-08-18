@@ -60,6 +60,12 @@ class Home extends ReactComponent {
           <NavbarUnit label="Daniel Nguyen" position="left" fontWeight={400}
                       paddingHorizontal={8} href={root} fontSize={12}
                       lineHeight={1.5}/>
+          {
+            this.state.loggedIn ?
+              <NavbarUnit label="Logout" onClick={this.onClickLogout}
+                          paddingHorizontal={8} fontSize={12}/> :
+              null
+          }
           <NavbarUnit label="Resume" href="assets/Resume.pdf" target="_blank"
                       logClick={true} logDescription="Visited Resume" fontSize={12}/>
         </Navbar>
