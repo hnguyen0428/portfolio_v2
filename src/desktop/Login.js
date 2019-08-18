@@ -35,7 +35,7 @@ class Login extends React.Component {
 
   onClickLogin = (e) => {
     // Firebase login
-    let root = process.env.NODE_ENV === 'development' ? '/?edit=true' : '/portfolio/?edit=true';
+    let root = '/?edit=true';
     loginWithEmail(this.state.email, this.state.password, (user) => {
       history.push(root);
     }, (error) => {
@@ -67,14 +67,14 @@ class Login extends React.Component {
 
         <Flexbox widthPct={100} heightPct={100} alignItems="center"
                  justifyContent="center">
-          <Flexbox width={300} justifyContent="center" alignItems="center">
-            <form id="admin-login">
+          <Flexbox width={350} justifyContent="center" alignItems="center">
+            <form id="admin-login" style={{width: 'inherit'}}>
               <Flexbox widthPct={100} paddingVertical={8}>
-                <TextInput fillHeight type="email" placeholder="Email"
+                <TextInput fillHeight type="email" placeholder="Email" minHeight={25}
                            onChange={this.onEmailChange} autoComplete="on"/>
               </Flexbox>
-              <Flexbox widthPct={100} paddingVertical={8}>
-                <TextInput fillHeight type="password" placeholder="Password"
+              <Flexbox widthPct={100} minHeight={40} paddingVertical={8}>
+                <TextInput fillHeight type="password" placeholder="Password" minHeight={25}
                            onChange={this.onPasswordChange} autoComplete="on"/>
               </Flexbox>
             </form>

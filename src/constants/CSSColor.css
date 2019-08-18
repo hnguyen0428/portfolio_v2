@@ -27,4 +27,6 @@
 
     --secondary-text: rgba(145, 148, 155, 1.0);
     --primary-text: var(--gray-100);
+
+    --fb-blue: rgba(53, 118, 234, 1);
 }

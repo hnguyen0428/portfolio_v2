@@ -1,4 +1,21 @@
 .text-input {
     width: 100%;
     height: 100%;
+
+    background-color: transparent;
+    border-style: none;
+    border-bottom: 2px transparent var(--gray-05);
+
+    transition: border-bottom-color 0.3s ease-in;
+    -webkit-transition: border-bottom-color 0.3s ease-in;
+    -moz-transition: border-bottom-color 0.3s ease-in;
+
+    outline: none;
+    resize: none;
+    overflow-x: visible;
+    overflow-y: visible;
+}
+
+.text-input:focus {
+    border-bottom: 2px solid var(--fb-blue);
 }

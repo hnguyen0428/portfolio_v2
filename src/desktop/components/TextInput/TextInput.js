@@ -8,9 +8,6 @@ import CSSColor from "../../../constants/CSSColor";
 import CommonProps from "../../common/props";
 import Text from "../Text";
 
-const stylePropType = require('react-style-proptype');
-
-
 class TextInput extends React.Component {
   onChange = (e) => {
     let value = e.target.value;
