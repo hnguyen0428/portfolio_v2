@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="406d95e0-2826-4a31-966f-0247bf8304d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/desktop/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desktop/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/common/props.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desktop/common/props.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/components/TextInput/TextInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desktop/components/TextInput/TextInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/sections/AboutMe/AboutMe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desktop/sections/AboutMe/AboutMe.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/desktop/sections/Projects/ProjectCard/ProjectCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desktop/sections/Projects/ProjectCard/ProjectCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/sections/Projects/Projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desktop/sections/Projects/Projects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/sections/WorkExperience/WorkExperience.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desktop/sections/WorkExperience/WorkExperience.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desktop/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desktop/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/firebase/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/firebase/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/Profile.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/desktop/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="83" column="70" lean-forward="true" selection-start-line="83" selection-start-column="70" selection-end-line="83" selection-end-column="70" />
+              <caret line="93" column="63" lean-forward="true" selection-start-line="93" selection-start-column="46" selection-end-line="93" selection-end-column="63" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -53,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/src/desktop/sections/Projects/Projects.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="322">
-              <caret line="50" column="42" lean-forward="true" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
+              <caret line="50" column="42" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -89,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/src/desktop/sections/AboutMe/AboutMe.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="54">
-              <caret line="79" column="13" lean-forward="true" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
+              <caret line="79" column="13" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -101,16 +91,16 @@
         <entry file="file://$PROJECT_DIR$/src/firebase/profile.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="518">
-              <caret line="104" column="38" lean-forward="true" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
+              <caret line="104" column="38" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/desktop/sections/Projects/ProjectCard/ProjectCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="151" column="12" selection-start-line="151" selection-start-column="12" selection-end-line="153" selection-end-column="22" />
+            <state relative-caret-position="260">
+              <caret line="96" column="55" lean-forward="true" selection-start-line="96" selection-start-column="55" selection-end-line="96" selection-end-column="55" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -205,9 +195,9 @@
         <option value="$PROJECT_DIR$/src/desktop/components/TextInput/TextInput.js" />
         <option value="$PROJECT_DIR$/src/desktop/sections/WorkExperience/WorkExperience.js" />
         <option value="$PROJECT_DIR$/src/firebase/profile.js" />
-        <option value="$PROJECT_DIR$/src/desktop/sections/Projects/ProjectCard/ProjectCard.js" />
         <option value="$PROJECT_DIR$/src/desktop/sections/Projects/Projects.js" />
         <option value="$PROJECT_DIR$/src/desktop/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" />
+        <option value="$PROJECT_DIR$/src/desktop/sections/Projects/ProjectCard/ProjectCard.js" />
       </list>
     </option>
   </component>
@@ -519,12 +509,12 @@
       <option name="presentableId" value="Default" />
       <updated>1565470391923</updated>
       <workItem from="1565470394508" duration="74780000" />
-      <workItem from="1565859292292" duration="24286000" />
+      <workItem from="1565859292292" duration="24556000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99066000" />
+    <option name="totallyTimeSpent" value="99336000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -891,7 +881,7 @@
     <entry file="file://$PROJECT_DIR$/src/desktop/sections/AboutMe/AboutMe.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
-          <caret line="79" column="13" lean-forward="true" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
+          <caret line="79" column="13" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -911,7 +901,7 @@
     <entry file="file://$PROJECT_DIR$/src/firebase/profile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
-          <caret line="104" column="38" lean-forward="true" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
+          <caret line="104" column="38" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -945,17 +935,7 @@
     <entry file="file://$PROJECT_DIR$/src/desktop/sections/Projects/Projects.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
-          <caret line="50" column="42" lean-forward="true" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/desktop/sections/Projects/ProjectCard/ProjectCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="151" column="12" selection-start-line="151" selection-start-column="12" selection-end-line="153" selection-end-column="22" />
+          <caret line="50" column="42" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -965,7 +945,17 @@
     <entry file="file://$PROJECT_DIR$/src/desktop/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="83" column="70" lean-forward="true" selection-start-line="83" selection-start-column="70" selection-end-line="83" selection-end-column="70" />
+          <caret line="93" column="63" lean-forward="true" selection-start-line="93" selection-start-column="46" selection-end-line="93" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/desktop/sections/Projects/ProjectCard/ProjectCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="96" column="55" lean-forward="true" selection-start-line="96" selection-start-column="55" selection-end-line="96" selection-end-column="55" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

@@ -95,9 +95,8 @@ class ProjectCard extends React.Component {
           <TextInput color={CSSColor.MODAL_TEXT} textarea minWidth={640}
                      rows={10} onChange={this.onChangeLongDesc}
                      value={longDesc} label="Long Description"/>
-          <TextInput color={CSSColor.MODAL_TEXT} textarea minWidth={640}
-                     rows={1} onChange={this.onChangeTechUsed}
-                     value={techUsed} label="Technologies"/>
+          <TextInput onChange={this.onChangeTechUsed} lineHeight={0.4}
+                     value={techUsed} fontWeight="bold" label="Technologies"/>
 
           <Flexbox widthPct={100} autoMarginTop flexDirection="row"
                    justifyContent="flex-end" alignItems="flex-end">
