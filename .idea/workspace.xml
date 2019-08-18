@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="406d95e0-2826-4a31-966f-0247bf8304d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/constants/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renders/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renders/ReactComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/ReactComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renders/components/Button/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Button/Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renders/components/Modal/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Modal/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renders/components/TextInput/TextInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/TextInput/TextInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +15,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/renders/Login.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
@@ -49,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/src/renders/ReactComponent.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+              <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -61,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/src/renders/components/Button/Button.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1170">
-              <caret line="78" column="20" lean-forward="true" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
+              <caret line="78" column="20" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -73,16 +67,19 @@
         <entry file="file://$PROJECT_DIR$/src/renders/components/Button/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="1" column="32" lean-forward="true" selection-end-line="6" selection-end-column="1" />
+              <caret line="1" column="32" selection-end-line="6" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="265">
+              <caret line="153" column="54" lean-forward="true" selection-start-line="153" selection-start-column="54" selection-end-line="153" selection-end-column="54" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,8 +96,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+            <state relative-caret-position="1051">
+              <caret line="180" column="57" lean-forward="true" selection-start-line="180" selection-start-column="57" selection-end-line="180" selection-end-column="57" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -181,11 +181,11 @@
         <option value="$PROJECT_DIR$/src/renders/ReactComponent.js" />
         <option value="$PROJECT_DIR$/src/renders/components/Modal/style.css" />
         <option value="$PROJECT_DIR$/src/constants/common.css" />
-        <option value="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" />
         <option value="$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js" />
         <option value="$PROJECT_DIR$/src/renders/components/Button/Button.js" />
         <option value="$PROJECT_DIR$/src/renders/components/TextInput/TextInput.js" />
         <option value="$PROJECT_DIR$/src/renders/Login.js" />
+        <option value="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" />
       </list>
     </option>
   </component>
@@ -472,12 +472,12 @@
       <option name="presentableId" value="Default" />
       <updated>1565470391923</updated>
       <workItem from="1565470394508" duration="74780000" />
-      <workItem from="1565859292292" duration="51807000" />
+      <workItem from="1565859292292" duration="52186000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126587000" />
+    <option name="totallyTimeSpent" value="126966000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -859,7 +859,7 @@
     <entry file="file://$PROJECT_DIR$/src/renders/components/Button/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="32" lean-forward="true" selection-end-line="6" selection-end-column="1" />
+          <caret line="1" column="32" selection-end-line="6" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -870,24 +870,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/renders/components/Button/Button.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1170">
-          <caret line="78" column="20" lean-forward="true" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
+          <caret line="78" column="20" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -897,7 +883,7 @@
     <entry file="file://$PROJECT_DIR$/src/renders/ReactComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
-          <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -918,6 +904,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1051">
+          <caret line="180" column="57" lean-forward="true" selection-start-line="180" selection-start-column="57" selection-end-line="180" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="153" column="54" lean-forward="true" selection-start-line="153" selection-start-column="54" selection-end-line="153" selection-end-column="54" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

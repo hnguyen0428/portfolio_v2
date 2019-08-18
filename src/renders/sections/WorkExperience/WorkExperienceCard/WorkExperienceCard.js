@@ -151,7 +151,7 @@ class WorkExperienceCard extends ReactComponent {
 
     return (
       <div>
-        <Modal size="medium" show={this.state.showModal}
+        <Modal size={size} show={this.state.showModal}
                onBackdropClick={this.closeModal}>
           <Flexbox heightPct={100} widthPct={100}
                    minHeight={Modal.modalSizes[size].height}
@@ -182,7 +182,7 @@ class WorkExperienceCard extends ReactComponent {
             </Flexbox>
 
             <Flexbox widthPct={100} autoMarginTop flexDirection="row"
-                     justifyContent="flex-end">
+                     justifyContent="flex-end" alignItems="flex-end">
               {
                 this.props.allowEdit ?
                   <Button label="Save" fontSize={14} lineHeight={0.5}
