@@ -40,7 +40,7 @@ class AboutMe extends ReactComponent {
     });
   };
 
-  componentWillMount() {
+  componentDidMount() {
     fetchProfileText((obj) => {
       this.setState({
         heading: obj.heading || this.state.heading,

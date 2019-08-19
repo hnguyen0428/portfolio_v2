@@ -104,3 +104,13 @@ export function updateProjectContent(content, key, onSuccess, onFailure) {
   database.ref().update(updates)
     .then(onSuccess).catch(onFailure);
 }
+
+export function fetchActions(onSuccess, onFailure) {
+  database.ref('actions').once('value')
+    .then((snap) => {
+      if (snap && onSuccess) {
+        onSuccess(snap.val());
+      }
+    })
+    .catch(onFailure)
+}

@@ -15,6 +15,7 @@ import Projects from "./sections/Projects";
 import Contacts from "./sections/Contacts";
 import {fetchLoginState, logout} from "../firebase/auth";
 import {getEditMode} from "../common/utils";
+import LogMetrics from "./sections/LogMetrics";
 
 
 class Home extends ReactComponent {
@@ -29,6 +30,7 @@ class Home extends ReactComponent {
   }
 
   componentDidMount() {
+    fetchLoginState((loggedIn) => this.setState({loggedIn: loggedIn}));
     let hasLogged = sessionStorage.getItem('hasLogged');
     if (hasLogged !== '1') {
       Logger.genLog({
@@ -38,10 +40,6 @@ class Home extends ReactComponent {
         sessionStorage.setItem('hasLogged', '1');
       });
     }
-  }
-
-  componentWillMount() {
-    fetchLoginState((loggedIn) => this.setState({loggedIn: loggedIn}));
   }
 
   onClickLogout = (e) => {
@@ -73,6 +71,11 @@ class Home extends ReactComponent {
         <AboutMe/>
         <WorkExperience/>
         <Projects/>
+        {
+          this.state.loggedIn
+            ? <LogMetrics/>
+            : null
+        }
         <Contacts/>
       </Flexbox>
     );
@@ -113,6 +116,11 @@ class Home extends ReactComponent {
         <AboutMe allowEdit={allowEdit}/>
         <WorkExperience allowEdit={allowEdit}/>
         <Projects allowEdit={allowEdit}/>
+        {
+          this.state.loggedIn
+            ? <LogMetrics/>
+            : null
+        }
       </Flexbox>
     );
   }

@@ -3,9 +3,7 @@ import ReactComponent from "../../ReactComponent";
 import Flexbox from "../../components/Flexbox";
 import CSSColor from "../../../constants/CSSColor";
 import Icon from "../../components/Icon";
-import NavbarUnitIcon from "../../components/NavbarUnitIcon";
 import profile from "../../../static/Profile";
-import Navbar from "../../components/Navbar";
 import Button from "../../components/Button";
 
 
@@ -13,7 +11,7 @@ class Contacts extends ReactComponent {
   mobileRender() {
     return (
       <Flexbox backgroundColor={CSSColor.BLACK_ALPHA_80}
-               alignItems="center" paddingVertical={32} marginTop={32}
+               alignItems="center" paddingVertical={32}
                marginHorizontal={20} widthPct={100}>
         <Flexbox flexDirection="row" justifyContent="center" alignItems="center">
           <Flexbox paddingHorizontal={14}>

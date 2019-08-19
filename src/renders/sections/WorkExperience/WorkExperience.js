@@ -45,7 +45,7 @@ class WorkExperience extends ReactComponent {
     });
   };
 
-  componentWillMount() {
+  componentDidMount() {
     fetchWorkExperienceText((obj) => {
       this.setState({
         heading: obj.heading || this.state.heading,

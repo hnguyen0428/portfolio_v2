@@ -52,7 +52,8 @@ class Login extends ReactComponent {
                       paddingHorizontal={8} href={root} fontSize={12}
                       lineHeight={1.5}/>
           <NavbarUnit label="Resume" href="assets/Resume.pdf" target="_blank"
-                      logClick={true} logDescription="Visited Resume" fontSize={12}/>
+                      logClick={true} logDescription="Visited Resume"
+                      fontSize={12}/>
         </Navbar>
 
         <Flexbox heightPct={100} alignItems="center"
@@ -60,11 +61,13 @@ class Login extends ReactComponent {
           <Flexbox width={300} justifyContent="center" alignItems="center">
             <form id="admin-login" style={{width: 'inherit'}}>
               <Flexbox paddingVertical={8}>
-                <TextInput fillHeight type="email" placeholder="Email" minHeight={25}
+                <TextInput fillHeight type="email" placeholder="Email"
+                           minHeight={25}
                            onChange={this.onEmailChange} autoComplete="on"/>
               </Flexbox>
               <Flexbox minHeight={40} paddingVertical={8}>
-                <TextInput fillHeight type="password" placeholder="Password" minHeight={25}
+                <TextInput fillHeight type="password" placeholder="Password"
+                           minHeight={25}
                            onChange={this.onPasswordChange} autoComplete="on"/>
               </Flexbox>
             </form>
@@ -102,13 +105,16 @@ class Login extends ReactComponent {
                       borderRadius={6}/>
           <NavbarUnitIcon src={"assets/github_icon.png"}
                           href={profile.githubLink} target="_blank"
-                          logClick={true} logDescription="Visited Github"/>
+                          logClick={true} logDescription="Visited Github"
+                          paddingHorizontal={12}/>
           <NavbarUnitIcon src={"assets/linkedin_icon.png"}
                           href={profile.linkedinLink} target="_blank"
-                          logClick={true} logDescription="Visited LinkedIn"/>
+                          logClick={true} logDescription="Visited LinkedIn"
+                          paddingHorizontal={12}/>
           <NavbarUnitIcon src={"assets/facebook_icon.png"}
                           href={profile.fbLink} target="_blank"
-                          logClick={true} logDescription="Visited Facebook"/>
+                          logClick={true} logDescription="Visited Facebook"
+                          paddingHorizontal={12}/>
         </Navbar>
 
         <Flexbox widthPct={100} heightPct={100} alignItems="center"
@@ -116,11 +122,13 @@ class Login extends ReactComponent {
           <Flexbox width={350} justifyContent="center" alignItems="center">
             <form id="admin-login" style={{width: 'inherit'}}>
               <Flexbox widthPct={100} paddingVertical={8}>
-                <TextInput fillHeight type="email" placeholder="Email" minHeight={25}
+                <TextInput fillHeight type="email" placeholder="Email"
+                           minHeight={25}
                            onChange={this.onEmailChange} autoComplete="on"/>
               </Flexbox>
               <Flexbox widthPct={100} minHeight={40} paddingVertical={8}>
-                <TextInput fillHeight type="password" placeholder="Password" minHeight={25}
+                <TextInput fillHeight type="password" placeholder="Password"
+                           minHeight={25}
                            onChange={this.onPasswordChange} autoComplete="on"/>
               </Flexbox>
             </form>

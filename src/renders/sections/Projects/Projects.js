@@ -44,7 +44,7 @@ class Projects extends ReactComponent {
     });
   };
 
-  componentWillMount() {
+  componentDidMount() {
     fetchProjectsText((obj) => {
       this.setState({
         heading: obj.heading || this.state.heading,
