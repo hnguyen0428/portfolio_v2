@@ -16,6 +16,8 @@ import Contacts from "./sections/Contacts";
 import {fetchLoginState, logout} from "../firebase/auth";
 import {getEditMode} from "../common/utils";
 import LogMetrics from "./sections/LogMetrics";
+import history from './history';
+import {Link} from 'react-router-dom';
 
 
 class Home extends ReactComponent {
@@ -48,6 +50,10 @@ class Home extends ReactComponent {
     }, (e) => {
       alert(e);
     });
+  };
+
+  onClickEditMode = (e) => {
+    this.setState({edit: true});
   };
 
   mobileRender() {
@@ -92,8 +98,14 @@ class Home extends ReactComponent {
                       paddingHorizontal={16} href={root}/>
           {
             this.state.loggedIn ?
+              <NavbarUnit label="Edit Mode"
+                          paddingHorizontal={8} onClick={this.onClickEditMode}/> :
+              null
+          }
+          {
+            this.state.loggedIn ?
               <NavbarUnit label="Logout" onClick={this.onClickLogout}
-                          paddingHorizontal={16}/> :
+                          paddingHorizontal={12}/> :
               null
           }
           <NavbarUnit label="Resume" href="assets/Resume.pdf" target="_blank"
