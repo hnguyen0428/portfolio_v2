@@ -101,16 +101,14 @@ const profile = {
       "that I've initially gained the knowledge required for industry work.",
   },
   "education": {
-    "school": "UC San Diego",
-    "major": "BS Computer Science",
-    "gradDate": "2020",
-    "gpa": "3.78",
-    "organizations": "Eta Kappa Nu, Computer Science Engineering Society",
-    "description": "At UC San Diego, I serve as a tutor for the CSE department. " +
-      "My responsibility includes grading assignments, holding lab hours to help students debug " +
-      "their programming assignments, and holding quiz reviews and discussions. " +
-      "I have tutored for CSE 11: Intro to Object Oriented Programming, and CSE 30: Systems " +
-      "Programming (using C and ARM Assembly).",
+    text: "I started college at UC San Diego in 2016 and I will be graduating in " +
+      "the June of 2020. At UC San Diego, I majored in Computer Science and had a " +
+      "minor in Math. During my time here, I served as a tutor for the Computer " +
+      "Science Department, teaching an Intro to OOP and a Systems Programming " +
+      "class. My responsibility includes grading programming assignments and " +
+      "holding lab hours to help students debug their assignments.",
+    heading: "Where I Went to School",
+    logo: "assets/ucsd_logo.png",
     "courses": [
       {
         "courseName": "Computer Networks",

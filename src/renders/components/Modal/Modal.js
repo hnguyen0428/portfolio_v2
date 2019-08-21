@@ -6,6 +6,8 @@ import Card from '../Card';
 import Text from '../Text';
 import './style.css';
 import CSSColor from "../../../constants/CSSColor";
+import CommonProps from "../../../common/props";
+import {coalesce} from "../../../common/utils";
 
 
 class Modal extends React.Component {
@@ -42,11 +44,22 @@ class Modal extends React.Component {
       <Flexbox className={cls} justifyContent="center" alignItems="center"
                onClick={this.props.onBackdropClick}>
         <Card backgroundColor={CSSColor.GRAY_05}
-              style={{width: 'auto', height: 'auto'}}
-              maxWidth={640} maxHeight={480}
-              minWidth={size.width} minHeight={size.height}
+              style={{width: 'auto', height: 'auto', overflow: 'scroll'}}
+              width={this.props.width}
+              height={this.props.height}
+              maxWidth={coalesce(this.props.maxWidth, 640)}
+              maxHeight={coalesce(this.props.maxHeight, 480)}
+              minWidth={coalesce(this.props.minWidth, size.width)}
+              minHeight={coalesce(this.props.minHeight, size.height)}
               flexShrink={0} onClick={this.onClickModal}
-              paddingAll={24}>
+              paddingAll={coalesce(this.props.paddingAll, 24)}
+              paddingTop={this.props.paddingTop}
+              paddingLeft={this.props.paddingLeft}
+              paddingBottom={this.props.paddingBottom}
+              paddingRight={this.props.paddingRight}
+              paddingVertical={this.props.paddingVertical}
+              paddingHorizontal={this.props.paddingHorizontal}
+        >
           {this.props.children}
         </Card>
       </Flexbox>
@@ -58,6 +71,8 @@ Modal.propTypes = {
   backgroundColor: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   show: PropTypes.bool,
+  ...CommonProps.paddings,
+  ...CommonProps.dimensions,
   onBackdropClick: PropTypes.func,
 };
 

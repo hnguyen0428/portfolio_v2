@@ -9,7 +9,7 @@ export function updateProfileText(heading, text, onSuccess, onFailure) {
     .then(onSuccess).catch(onFailure);
 }
 
-export function fetchProfileText(onSuccess, onFailure) {
+export function fetchAboutMe(onSuccess, onFailure) {
   let cached = sessionStorage.getItem("/profile/aboutMe");
   if (cached) {
     if (onSuccess) {
@@ -37,7 +37,7 @@ export function updateWorkExperienceText(heading, text, onSuccess, onFailure) {
     .then(onSuccess).catch(onFailure);
 }
 
-export function fetchWorkExperienceText(onSuccess, onFailure) {
+export function fetchWorkExperience(onSuccess, onFailure) {
   let cached = sessionStorage.getItem("/profile/workExperience");
   if (cached) {
     if (onSuccess) {
@@ -75,7 +75,7 @@ export function updateProjectsText(heading, text, onSuccess, onFailure) {
     .then(onSuccess).catch(onFailure);
 }
 
-export function fetchProjectsText(onSuccess, onFailure) {
+export function fetchProjects(onSuccess, onFailure) {
   let cached = sessionStorage.getItem("/profile/projects");
   if (cached) {
     if (onSuccess) {
@@ -113,4 +113,62 @@ export function fetchActions(onSuccess, onFailure) {
       }
     })
     .catch(onFailure)
+}
+
+export function updateEducationText(heading, text, onSuccess, onFailure) {
+  let updates = {};
+  updates["/profile/education/heading"] = heading;
+  updates["/profile/education/text"] = text;
+
+  database.ref().update(updates)
+    .then(onSuccess).catch(onFailure);
+}
+
+export function updateEducationCourse(content, key, onSuccess, onFailure) {
+  if (key === null || key === undefined) {
+    return;
+  }
+  let updates = {};
+  updates[`/profile/education/objs/${key}`] = content;
+  database.ref().update(updates)
+    .then(onSuccess).catch(onFailure);
+}
+
+export function addEducationCourse(content, onSuccess, onFailure) {
+  if (!content) {
+    return;
+  }
+  database.ref('/profile/education/objs').push().set(content)
+    .then(onSuccess).catch(onFailure);
+}
+
+export function removeEducationCourse(key, onSuccess, onFailure) {
+  database.ref(`/profile/education/objs/${key}`).remove()
+    .then(onSuccess).catch(onFailure);
+}
+
+export function fetchEducation(onSuccess, onFailure, fromCache) {
+  if (fromCache === undefined || fromCache === null) {
+    fromCache = true;
+  }
+
+  if (fromCache) {
+    let cached = sessionStorage.getItem("/profile/education");
+    if (cached) {
+      if (onSuccess) {
+        onSuccess(JSON.parse(cached));
+      }
+      return;
+    }
+  }
+
+  database.ref("/profile/education").once('value')
+    .then((snap) => {
+      let obj = snap.val();
+      if (onSuccess) {
+        onSuccess(obj);
+      }
+      sessionStorage.setItem("/profile/education", JSON.stringify(obj));
+    })
+    .catch(onFailure);
 }

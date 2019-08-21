@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import CSSColor from "../constants/CSSColor";
+import {coalesce} from "./utils";
 const stylePropType = require('react-style-proptype');
 
 
@@ -112,11 +113,11 @@ export default class CommonProps {
     style = {
       ...style,
       display: 'flex',
-      flexDirection: props.flexDirection || 'column',
-      flexWrap: props.flexWrap || 'nowrap',
-      flexGrow: props.flexGrow || 0,
-      flexShrink: props.flexShrink || 1,
-      flexBasis: props.flexBasis || 'auto',
+      flexDirection: coalesce(props.flexDirection, 'column'),
+      flexWrap: coalesce(props.flexWrap, 'nowrap'),
+      flexGrow: coalesce(props.flexGrow, 0),
+      flexShrink: coalesce(props.flexShrink, 1),
+      flexBasis: coalesce(props.flexBasis, 'auto'),
     };
     return style;
   }
@@ -285,9 +286,9 @@ export default class CommonProps {
 
     return {
       ...style,
-      fontWeight: props.fontWeight || 400,
-      fontSize: fontSize || '12pt',
-      lineHeight: props.lineHeight || 1.2,
+      fontWeight: coalesce(props.fontWeight, 400),
+      fontSize: coalesce(fontSize, '12pt'),
+      lineHeight: coalesce(props.lineHeight, 1.2),
       color: fontColor,
     };
   }

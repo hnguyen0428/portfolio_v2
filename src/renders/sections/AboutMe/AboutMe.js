@@ -8,7 +8,7 @@ import ProfileImage from "../../components/ProfileImage";
 import profile from "../../../static/Profile";
 import Text from "../../components/Text";
 import Button from "../../components/Button";
-import {fetchProfileText, updateProfileText} from "../../../firebase/profile";
+import {fetchAboutMe, updateProfileText} from "../../../firebase/profile";
 import TextInput from "../../components/TextInput";
 
 class AboutMe extends ReactComponent {
@@ -41,11 +41,13 @@ class AboutMe extends ReactComponent {
   };
 
   componentDidMount() {
-    fetchProfileText((obj) => {
-      this.setState({
-        heading: obj.heading || this.state.heading,
-        text: obj.text || this.state.text,
-      });
+    fetchAboutMe((obj) => {
+      if (obj) {
+        this.setState({
+          heading: obj.heading || this.state.heading,
+          text: obj.text || this.state.text,
+        });
+      }
     });
   }
 

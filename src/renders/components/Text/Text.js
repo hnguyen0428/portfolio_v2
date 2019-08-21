@@ -2,15 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Logger from '../../../firebase/logger';
 import './style.css';
-import CSSColor from "../../../constants/CSSColor";
 import CommonProps from "../../../common/props";
 import Flexbox from "../Flexbox";
 
-const stylePropType = require('react-style-proptype');
-
 
 class Text extends React.Component {
-  onClick = () => {
+  onClick = (e) => {
+    if (this.props.onClick) {
+      this.props.onClick(e);
+    }
+
     if (!this.props.logClick || !this.props.href) {
       return;
     }

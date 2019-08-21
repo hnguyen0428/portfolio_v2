@@ -5,6 +5,7 @@ import '../../../constants/common.css';
 import Button from '../Button';
 import CSSColor from "../../../constants/CSSColor";
 import CommonProps from "../../../common/props";
+import {coalesce} from "../../../common/utils";
 
 
 class NavbarUnit extends React.Component {
@@ -19,7 +20,7 @@ class NavbarUnit extends React.Component {
 
     return (
       <Button {...this.props} style={style}
-              paddingHorizontal={this.props.paddingHorizontal || 8}
+              paddingHorizontal={coalesce(this.props.paddingHorizontal, 8)}
               paddingVertical={this.props.paddingVertical}
               lineHeight={this.props.allBorder ? 0.4 : (this.props.lineHeight)}
               fontSize={this.props.fontSize || 15}

@@ -5,6 +5,7 @@ import '../../../constants/common.css';
 import Flexbox from '../Flexbox';
 import Icon from '../Icon';
 import CommonProps from "../../../common/props";
+import {coalesce} from "../../../common/utils";
 
 
 class NavbarUnitIcon extends React.Component {
@@ -21,7 +22,7 @@ class NavbarUnitIcon extends React.Component {
                style={style} alignItems="center" justifyContent="center">
         <Icon className="btnHover"
               href={this.props.href} target={this.props.target}
-              src={this.props.src} size={this.props.size || 28}
+              src={this.props.src} size={coalesce(this.props.size, 28)}
               logDescription={this.props.logDescription}
               logClick={this.props.logClick}/>
       </Flexbox>

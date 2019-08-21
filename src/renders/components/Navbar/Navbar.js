@@ -11,15 +11,10 @@ const stylePropType = require('react-style-proptype');
 
 class Navbar extends React.Component {
   render() {
-    let navbarStyle = style.navbar;
-    if (this.props.color) {
-      navbarStyle = {...navbarStyle, backgroundColor: this.props.color};
-    }
-
     return (
       <Flexbox className={this.props.blur ? "navbar navbarBlur" : "navbar"}
-               style={navbarStyle} flexDirection="row"
-               justifyContent="flex-end" alignItems="center">
+               flexDirection="row" justifyContent="flex-end"
+               alignItems="center" backgroundColor={this.props.color}>
         {this.props.children}
       </Flexbox>
     );

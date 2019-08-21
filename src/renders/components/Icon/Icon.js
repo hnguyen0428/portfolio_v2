@@ -4,11 +4,12 @@ import Logger from '../../../firebase/logger';
 import './style.css';
 import Image from "../Image";
 import CommonProps from "../../../common/props";
+import {coalesce} from "../../../common/utils";
 
 
 class Icon extends React.Component {
   render() {
-    let size = this.props.size || 32;
+    let size = coalesce(this.props.size, 32);
 
     return (
       <Image {...this.props} width={size} height={size}/>

@@ -16,8 +16,7 @@ import Contacts from "./sections/Contacts";
 import {fetchLoginState, logout} from "../firebase/auth";
 import {getEditMode} from "../common/utils";
 import LogMetrics from "./sections/LogMetrics";
-import history from './history';
-import {Link} from 'react-router-dom';
+import Education from "./sections/Education";
 
 
 class Home extends ReactComponent {
@@ -71,12 +70,14 @@ class Home extends ReactComponent {
               null
           }
           <NavbarUnit label="Resume" href="assets/Resume.pdf" target="_blank"
-                      logClick={true} logDescription="Visited Resume" fontSize={12}/>
+                      logClick={true} logDescription="Visited Resume"
+                      fontSize={12}/>
         </Navbar>
 
         <AboutMe/>
         <WorkExperience/>
         <Projects/>
+        <Education/>
         {
           this.state.loggedIn
             ? <LogMetrics/>
@@ -99,7 +100,8 @@ class Home extends ReactComponent {
           {
             this.state.loggedIn ?
               <NavbarUnit label="Edit Mode"
-                          paddingHorizontal={8} onClick={this.onClickEditMode}/> :
+                          paddingHorizontal={8}
+                          onClick={this.onClickEditMode}/> :
               null
           }
           {
@@ -128,6 +130,7 @@ class Home extends ReactComponent {
         <AboutMe allowEdit={allowEdit}/>
         <WorkExperience allowEdit={allowEdit}/>
         <Projects allowEdit={allowEdit}/>
+        <Education allowEdit={allowEdit} loggedIn={this.state.loggedIn}/>
         {
           this.state.loggedIn
             ? <LogMetrics/>

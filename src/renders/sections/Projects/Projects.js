@@ -9,7 +9,7 @@ import Text from "../../components/Text";
 import ProjectCard from "./ProjectCard";
 import TextInput from "../../components/TextInput";
 import {
-  fetchProjectsText, updateProjectContent,
+  fetchProjects, updateProjectContent,
   updateProjectsText,
 } from "../../../firebase/profile";
 
@@ -45,12 +45,14 @@ class Projects extends ReactComponent {
   };
 
   componentDidMount() {
-    fetchProjectsText((obj) => {
-      this.setState({
-        heading: obj.heading || this.state.heading,
-        text: obj.text || this.state.text,
-        objs: obj.objs || this.state.objs,
-      });
+    fetchProjects((obj) => {
+      if (obj) {
+        this.setState({
+          heading: obj.heading || this.state.heading,
+          text: obj.text || this.state.text,
+          objs: obj.objs || this.state.objs,
+        });
+      }
     });
   }
 

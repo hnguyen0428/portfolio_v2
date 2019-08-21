@@ -15,3 +15,7 @@ export function getEditMode() {
   }
   return edit;
 }
+
+export function coalesce(val1, val2) {
+  return val1 !== null && val1 !== undefined ? val1 : val2;
+}

@@ -1,0 +1,16 @@
+.buttons-ctn {
+    position: relative;
+    width: 100%;
+}
+
+.add-button {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+}
+
+.back-button {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+}

@@ -8,7 +8,16 @@
     width: 100%;
 }
 
-.navbarBlur {
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(20px);
+@supports (backdrop-filter: saturate(180%) blur(20px)) or (-webkit-backdrop-filter: saturate(180%) blur(20px)) {
+    .navbarBlur {
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+        background-color: var(--black-alpha-80);
+    }
+}
+
+@supports (not(backdrop-filter: saturate(180%) blur(20px))) and (not(-webkit-backdrop-filter: saturate(180%) blur(20px))) {
+    .navbarBlur {
+        background-color: rgba(45, 45, 45, 0.98);
+    }
 }

@@ -4,7 +4,7 @@
 
     background-color: transparent;
     border-style: none;
-    border-bottom: 2px transparent var(--gray-05);
+    border-bottom: 2px solid var(--gray-10);
 
     transition: border-bottom-color 0.3s ease-in;
     -webkit-transition: border-bottom-color 0.3s ease-in;

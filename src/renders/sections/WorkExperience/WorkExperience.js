@@ -9,7 +9,7 @@ import Text from "../../components/Text";
 import WorkExperienceCard from "./WorkExperienceCard";
 import TextInput from "../../components/TextInput";
 import {
-  fetchWorkExperienceText, updateWorkExperienceContent,
+  fetchWorkExperience, updateWorkExperienceContent,
   updateWorkExperienceText
 } from "../../../firebase/profile";
 
@@ -46,12 +46,14 @@ class WorkExperience extends ReactComponent {
   };
 
   componentDidMount() {
-    fetchWorkExperienceText((obj) => {
-      this.setState({
-        heading: obj.heading || this.state.heading,
-        text: obj.text || this.state.text,
-        objs: obj.objs || this.state.objs,
-      });
+    fetchWorkExperience((obj) => {
+      if (obj) {
+        this.setState({
+          heading: obj.heading || this.state.heading,
+          text: obj.text || this.state.text,
+          objs: obj.objs || this.state.objs,
+        });
+      }
     });
   }
 

@@ -95,7 +95,7 @@ class LogMetrics extends ReactComponent {
       <Flexbox backgroundColor={CSSColor.LIGHT_WHITE}
                alignItems="center" paddingVertical={32} marginTop={32}
                widthPct={100}>
-        <Flexbox flexDirection="row" width={1300} justifyContent="center"
+        <Flexbox flexDirection="row" widthPct={100} justifyContent="center"
                  paddingHorizontal={20}>
           {
             categories.map((category) => {
