@@ -16,7 +16,7 @@
     }
 }
 
-@supports (not(backdrop-filter: saturate(180%) blur(20px))) and (not(-webkit-backdrop-filter: saturate(180%) blur(20px))) {
+@supports not ((backdrop-filter: saturate(180%) blur(20px)) or (-webkit-backdrop-filter: saturate(180%) blur(20px))) {
     .navbarBlur {
         background-color: rgba(45, 45, 45, 0.98);
     }
