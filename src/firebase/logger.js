@@ -4,10 +4,16 @@ import moment from 'moment';
 import {
   isMobile,
   osName,
+  osVersion,
   isMobileOnly,
   isBrowser,
   browserName,
-  mobileModel
+  mobileModel,
+  mobileVendor,
+  fullBrowserVersion,
+  engineName,
+  engineVersion,
+  getUA,
 } from 'react-device-detect';
 
 
@@ -15,13 +21,20 @@ class Logger {
   static getExtraData() {
     return {
       creationTime: moment().format('MMMM Do YYYY, h:mm:ss a'),
+      timestamp: moment().unix(),
       deviceInfo: {
         isMobile: isMobileOnly,
         isTablet: isMobile && !isMobileOnly,
         isBrowser: isBrowser,
         osName: osName,
+        osVersion: osVersion,
         browserName: browserName,
-        mobileModel: mobileModel
+        fullBrowserVersion: fullBrowserVersion,
+        mobileVendor: mobileVendor,
+        mobileModel: mobileModel,
+        engineName: engineName,
+        engineVersion: engineVersion,
+        userAgent: getUA,
       }
     };
   }
