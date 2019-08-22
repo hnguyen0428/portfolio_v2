@@ -14,11 +14,10 @@ import Modal from "../../components/Modal";
 import Icon from "../../components/Icon";
 import "./style.css";
 import {
-  fetchEducation,
-  updateEducationText,
-  updateEducationCourse,
   addEducationCourse,
-  removeEducationCourse
+  fetchEducation,
+  removeEducationCourse,
+  updateEducationText
 } from "../../../firebase/profile";
 import {coalesce} from "../../../common/utils";
 import Logger from "../../../firebase/logger";
@@ -49,39 +48,38 @@ class Education extends ReactComponent {
     };
   }
 
-  componentDidMount() {
-    this.fetchEducationObject(true);
+  async componentDidMount() {
+    await this.fetchEducationObject(true);
   }
 
-  fetchEducationObject = (fromCache) => {
-    fetchEducation((obj) => {
-      if (obj) {
-        let courses = [];
-        // Sort by name
-        for (let key in obj.objs) {
-          courses.push({
-            key: key,
-            name: obj.objs[key].name,
-            description: obj.objs[key].description,
-          });
-        }
-        courses.sort((a, b) => {
-          if (a.name < b.name) {
-            return -1;
-          } else if (a.name === b.name) {
-            return 0;
-          } else {
-            return 1;
-          }
-        });
-
-        this.setState({
-          heading: coalesce(obj.heading, this.state.heading),
-          text: coalesce(obj.text, this.state.text),
-          objs: courses,
+  fetchEducationObject = async (fromCache) => {
+    let obj = await fetchEducation(fromCache);
+    if (obj) {
+      let courses = [];
+      // Sort by name
+      for (let key in obj.objs) {
+        courses.push({
+          key: key,
+          name: obj.objs[key].name,
+          description: obj.objs[key].description,
         });
       }
-    }, null, fromCache);
+      courses.sort((a, b) => {
+        if (a.name < b.name) {
+          return -1;
+        } else if (a.name === b.name) {
+          return 0;
+        } else {
+          return 1;
+        }
+      });
+
+      this.setState({
+        heading: coalesce(obj.heading, this.state.heading),
+        text: coalesce(obj.text, this.state.text),
+        objs: courses,
+      });
+    }
   };
 
   onClickFaveCourses = (e) => {
@@ -93,10 +91,12 @@ class Education extends ReactComponent {
     });
   };
 
-  onClickUpdate = (e) => {
-    updateEducationText(this.state.heading, this.state.text, null, () => {
+  onClickUpdate = async (e) => {
+    try {
+      await updateEducationText(this.state.heading, this.state.text);
+    } catch (err) {
       alert("Error updating education text.");
-    });
+    }
   };
 
   closeModal = (e) => {
@@ -120,10 +120,9 @@ class Education extends ReactComponent {
     }
   };
 
-  onClickDeleteCourse = (e, key) => {
-    removeEducationCourse(key, () => {
-      this.fetchEducationObject(false);
-    });
+  onClickDeleteCourse = async (e, key) => {
+    await removeEducationCourse(key);
+    await this.fetchEducationObject(false);
   };
 
   onClickAddCourse = (e) => {
@@ -148,17 +147,18 @@ class Education extends ReactComponent {
     });
   };
 
-  onClickSaveCourseButton = (e) => {
-    addEducationCourse(this.state.courseAdding, () => {
-      this.setState({
-        addState: false,
-        courseAdding: {
-          name: "",
-          description: "",
-        }
-      });
-      this.fetchEducationObject(false);
+  onClickSaveCourseButton = async (e) => {
+    await addEducationCourse(this.state.courseAdding);
+    this.setState({
+      addState: false,
+      courseAdding: {
+        name: "",
+        description: "",
+      }
     });
+
+    // Re-fetch the object
+    await this.fetchEducationObject(false);
   };
 
   onClickBack = (e) => {

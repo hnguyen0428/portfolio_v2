@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import Flexbox from '../Flexbox';
 import Card from '../Card';
-import Text from '../Text';
 import './style.css';
 import CSSColor from "../../../constants/CSSColor";
 import CommonProps from "../../../common/props";

@@ -9,9 +9,11 @@ import Text from "../../components/Text";
 import ProjectCard from "./ProjectCard";
 import TextInput from "../../components/TextInput";
 import {
-  fetchProjects, updateProjectContent,
+  fetchProjects,
+  updateProjectContent,
   updateProjectsText,
 } from "../../../firebase/profile";
+import {coalesce} from "../../../common/utils";
 
 
 class Projects extends ReactComponent {
@@ -36,24 +38,24 @@ class Projects extends ReactComponent {
     this.setState({text: val});
   };
 
-  onClickUpdate = (e) => {
+  onClickUpdate = async (e) => {
     // Update About Me info
-    updateProjectsText(this.state.heading, this.state.text, () => {
-    }, (error) => {
+    try {
+      await updateProjectsText(this.state.heading, this.state.text);
+    } catch (err) {
       alert('Error updating projects section.');
-    });
+    }
   };
 
-  componentDidMount() {
-    fetchProjects((obj) => {
-      if (obj) {
-        this.setState({
-          heading: obj.heading || this.state.heading,
-          text: obj.text || this.state.text,
-          objs: obj.objs || this.state.objs,
-        });
-      }
-    });
+  async componentDidMount() {
+    let obj = await fetchProjects();
+    if (obj) {
+      this.setState({
+        heading: coalesce(obj.heading, this.state.heading),
+        text: coalesce(obj.text, this.state.text),
+        objs: coalesce(obj.objs, this.state.objs),
+      });
+    }
   }
 
   onChangeLongDesc = (e, val, dbKey) => {
@@ -80,11 +82,12 @@ class Projects extends ReactComponent {
     });
   };
 
-  onClickSaveButton = (e, dbKey) => {
-    updateProjectContent(this.state.objs[dbKey], dbKey, () => {
-    }, (error) => {
+  onClickSaveButton = async (e, dbKey) => {
+    try {
+      await updateProjectContent(this.state.objs[dbKey], dbKey);
+    } catch (err) {
       alert('Error updating work experience card.');
-    });
+    }
   };
 
   mobileRender() {

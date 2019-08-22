@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import style from './style';
 import NavbarUnit from '../NavbarUnit';
 import Flexbox from '../Flexbox';
 import NavbarUnitIcon from "../NavbarUnitIcon";

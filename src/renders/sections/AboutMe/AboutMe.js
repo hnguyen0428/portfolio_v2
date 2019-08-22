@@ -31,24 +31,23 @@ class AboutMe extends ReactComponent {
     this.setState({text: val});
   };
 
-  onClickUpdate = (e) => {
+  onClickUpdate = async (e) => {
     // Update About Me info
-    updateProfileText(this.state.heading, this.state.text, () => {
-
-    }, (error) => {
+    try {
+      await updateProfileText(this.state.heading, this.state.text);
+    } catch (err) {
       alert('Error updating about me section.');
-    });
+    }
   };
 
-  componentDidMount() {
-    fetchAboutMe((obj) => {
-      if (obj) {
-        this.setState({
-          heading: obj.heading || this.state.heading,
-          text: obj.text || this.state.text,
-        });
-      }
-    });
+  async componentDidMount() {
+    let obj = await fetchAboutMe();
+    if (obj) {
+      this.setState({
+        heading: obj.heading || this.state.heading,
+        text: obj.text || this.state.text,
+      });
+    }
   }
 
   mobileRender() {

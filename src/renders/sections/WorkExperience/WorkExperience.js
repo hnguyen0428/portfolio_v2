@@ -9,9 +9,11 @@ import Text from "../../components/Text";
 import WorkExperienceCard from "./WorkExperienceCard";
 import TextInput from "../../components/TextInput";
 import {
-  fetchWorkExperience, updateWorkExperienceContent,
+  fetchWorkExperience,
+  updateWorkExperienceContent,
   updateWorkExperienceText
 } from "../../../firebase/profile";
+import {coalesce} from "../../../common/utils";
 
 
 class WorkExperience extends ReactComponent {
@@ -36,25 +38,24 @@ class WorkExperience extends ReactComponent {
     this.setState({text: val});
   };
 
-  onClickUpdate = (e) => {
+  onClickUpdate = async (e) => {
     // Update About Me info
-    updateWorkExperienceText(this.state.heading, this.state.text, () => {
-
-    }, (error) => {
+    try {
+      await updateWorkExperienceText(this.state.heading, this.state.text);
+    } catch (err) {
       alert('Error updating work experience section.');
-    });
+    }
   };
 
-  componentDidMount() {
-    fetchWorkExperience((obj) => {
-      if (obj) {
-        this.setState({
-          heading: obj.heading || this.state.heading,
-          text: obj.text || this.state.text,
-          objs: obj.objs || this.state.objs,
-        });
-      }
-    });
+  async componentDidMount() {
+    let obj = await fetchWorkExperience();
+    if (obj) {
+      this.setState({
+        heading: coalesce(obj.heading, this.state.heading),
+        text: coalesce(obj.text, this.state.text),
+        objs: coalesce(obj.objs, this.state.objs),
+      });
+    }
   }
 
   onChangeDescription = (e, val, dbKey) => {
@@ -73,11 +74,12 @@ class WorkExperience extends ReactComponent {
     });
   };
 
-  onClickSaveButton = (e, dbKey) => {
-    updateWorkExperienceContent(this.state.objs[dbKey], dbKey, () => {
-    }, (error) => {
+  onClickSaveButton = async (e, dbKey) => {
+    try {
+      await updateWorkExperienceContent(this.state.objs[dbKey], dbKey);
+    } catch (err) {
       alert('Error updating work experience card.');
-    });
+    }
   };
 
   mobileRender() {

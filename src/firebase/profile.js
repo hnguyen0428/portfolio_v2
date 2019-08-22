@@ -1,174 +1,124 @@
 import {database} from '../config/firebase';
+import {coalesce} from "../common/utils";
 
-export function updateProfileText(heading, text, onSuccess, onFailure) {
-  let updates = {};
-  updates["/profile/aboutMe/heading"] = heading;
-  updates["/profile/aboutMe/text"] = text;
-
-  database.ref().update(updates)
-    .then(onSuccess).catch(onFailure);
-}
-
-export function fetchAboutMe(onSuccess, onFailure) {
-  let cached = sessionStorage.getItem("/profile/aboutMe");
-  if (cached) {
-    if (onSuccess) {
-      onSuccess(JSON.parse(cached));
-    }
-    return;
-  }
-  database.ref("/profile/aboutMe").once('value')
-    .then((snap) => {
-      let obj = snap.val();
-      if (onSuccess) {
-        onSuccess(snap.val());
-      }
-      sessionStorage.setItem("/profile/aboutMe", JSON.stringify(obj));
-    })
-    .catch(onFailure);
-}
-
-export function updateWorkExperienceText(heading, text, onSuccess, onFailure) {
-  let updates = {};
-  updates["/profile/workExperience/heading"] = heading;
-  updates["/profile/workExperience/text"] = text;
-
-  database.ref().update(updates)
-    .then(onSuccess).catch(onFailure);
-}
-
-export function fetchWorkExperience(onSuccess, onFailure) {
-  let cached = sessionStorage.getItem("/profile/workExperience");
-  if (cached) {
-    if (onSuccess) {
-      onSuccess(JSON.parse(cached));
-    }
-    return;
-  }
-  database.ref("/profile/workExperience").once('value')
-    .then((snap) => {
-      let obj = snap.val();
-      if (onSuccess) {
-        onSuccess(obj);
-      }
-      sessionStorage.setItem("/profile/workExperience", JSON.stringify(obj));
-    })
-    .catch(onFailure);
-}
-
-export function updateWorkExperienceContent(content, key, onSuccess, onFailure) {
-  if (key === null || key === undefined) {
-    return;
-  }
-  let updates = {};
-  updates[`/profile/workExperience/objs/${key}`] = content;
-  database.ref().update(updates)
-    .then(onSuccess).catch(onFailure);
-}
-
-export function updateProjectsText(heading, text, onSuccess, onFailure) {
-  let updates = {};
-  updates["/profile/projects/heading"] = heading;
-  updates["/profile/projects/text"] = text;
-
-  database.ref().update(updates)
-    .then(onSuccess).catch(onFailure);
-}
-
-export function fetchProjects(onSuccess, onFailure) {
-  let cached = sessionStorage.getItem("/profile/projects");
-  if (cached) {
-    if (onSuccess) {
-      onSuccess(JSON.parse(cached));
-    }
-    return;
-  }
-
-  database.ref("/profile/projects").once('value')
-    .then((snap) => {
-      let obj = snap.val();
-      if (onSuccess) {
-        onSuccess(obj);
-      }
-      sessionStorage.setItem("/profile/projects", JSON.stringify(obj));
-    })
-    .catch(onFailure);
-}
-
-export function updateProjectContent(content, key, onSuccess, onFailure) {
-  if (key === null || key === undefined) {
-    return;
-  }
-  let updates = {};
-  updates[`/profile/projects/objs/${key}`] = content;
-  database.ref().update(updates)
-    .then(onSuccess).catch(onFailure);
-}
-
-export function fetchActions(onSuccess, onFailure) {
-  database.ref('actions').once('value')
-    .then((snap) => {
-      if (snap && onSuccess) {
-        onSuccess(snap.val());
-      }
-    })
-    .catch(onFailure)
-}
-
-export function updateEducationText(heading, text, onSuccess, onFailure) {
-  let updates = {};
-  updates["/profile/education/heading"] = heading;
-  updates["/profile/education/text"] = text;
-
-  database.ref().update(updates)
-    .then(onSuccess).catch(onFailure);
-}
-
-export function updateEducationCourse(content, key, onSuccess, onFailure) {
-  if (key === null || key === undefined) {
-    return;
-  }
-  let updates = {};
-  updates[`/profile/education/objs/${key}`] = content;
-  database.ref().update(updates)
-    .then(onSuccess).catch(onFailure);
-}
-
-export function addEducationCourse(content, onSuccess, onFailure) {
-  if (!content) {
-    return;
-  }
-  database.ref('/profile/education/objs').push().set(content)
-    .then(onSuccess).catch(onFailure);
-}
-
-export function removeEducationCourse(key, onSuccess, onFailure) {
-  database.ref(`/profile/education/objs/${key}`).remove()
-    .then(onSuccess).catch(onFailure);
-}
-
-export function fetchEducation(onSuccess, onFailure, fromCache) {
-  if (fromCache === undefined || fromCache === null) {
-    fromCache = true;
-  }
-
+export async function fetchDBObject(path, fromCache) {
+  fromCache = coalesce(fromCache, true);
   if (fromCache) {
-    let cached = sessionStorage.getItem("/profile/education");
+    let cached = sessionStorage.getItem(path);
     if (cached) {
-      if (onSuccess) {
-        onSuccess(JSON.parse(cached));
-      }
-      return;
+      return new Promise((resolve, _) => resolve(JSON.parse(cached)));
     }
   }
 
-  database.ref("/profile/education").once('value')
-    .then((snap) => {
-      let obj = snap.val();
-      if (onSuccess) {
-        onSuccess(obj);
-      }
-      sessionStorage.setItem("/profile/education", JSON.stringify(obj));
-    })
-    .catch(onFailure);
+  let snap = await database.ref(path).once('value');
+  if (snap) {
+    let obj = snap.val();
+    sessionStorage.setItem(path, JSON.stringify(obj));
+    return new Promise((resolve, _) => resolve(obj));
+  }
+  return new Promise((resolve, _) => resolve(null));
+}
+
+export async function addDBObject(path, content) {
+  return database.ref(path).push().set(content);
+}
+
+export async function updateDBModelText(path, heading, text) {
+  let updates = {};
+  updates[`${path}/heading`] = heading;
+  updates[`${path}/text`] = text;
+  try {
+    await database.ref().update(updates);
+    let cached = sessionStorage.getItem(path);
+    if (cached) {
+      cached = JSON.parse(cached);
+      cached.heading = heading;
+      cached.text = text;
+
+      // Re-set the cache
+      sessionStorage.setItem(path, JSON.stringify(cached));
+    }
+    return new Promise((resolve, _) => resolve());
+  } catch (err) {
+    return new Promise((_, reject) => reject(err));
+  }
+}
+
+export async function updateDBModelObjs(path, key, content) {
+  let updates = {};
+  updates[`${path}/objs/${key}`] = content;
+  return database.ref().update(updates);
+}
+
+export async function updateProfileText(heading, text) {
+  return updateDBModelText("/profile/aboutMe", heading, text);
+}
+
+export async function fetchAboutMe(fromCache) {
+  return fetchDBObject("/profile/aboutMe", fromCache);
+}
+
+export async function updateWorkExperienceText(heading, text) {
+  return updateDBModelText("/profile/workExperience", heading, text);
+}
+
+export async function fetchWorkExperience(fromCache) {
+  return fetchDBObject("/profile/workExperience", fromCache);
+}
+
+export async function updateWorkExperienceContent(content, key) {
+  if (key === null || key === undefined) {
+    return new Promise((resolve, _) => resolve(null));
+  }
+  return updateDBModelObjs("/profile/workExperience", key, content);
+}
+
+export async function updateProjectsText(heading, text) {
+  return updateDBModelText("/profile/projects", heading, text);
+}
+
+export async function fetchProjects(fromCache) {
+  return fetchDBObject("/profile/projects", fromCache);
+}
+
+export async function updateProjectContent(content, key) {
+  if (key === null || key === undefined) {
+    return new Promise((resolve, _) => resolve(null));
+  }
+  return updateDBModelObjs("/profile/projects", key, content);
+}
+
+export async function fetchActions() {
+  let snap = await database.ref('actions').once('value');
+  if (snap) {
+    return new Promise((resolve, _) => resolve(snap.val()));
+  } else {
+    return new Promise((resolve, _) => resolve(null));
+  }
+}
+
+export async function updateEducationText(heading, text) {
+  return updateDBModelText("/profile/education", heading, text);
+}
+
+export function updateEducationCourse(content, key) {
+  if (key === null || key === undefined) {
+    return new Promise((resolve, _) => resolve(null));
+  }
+  return updateDBModelObjs("/profile/education", key, content);
+}
+
+export async function addEducationCourse(content) {
+  if (!content) {
+    return new Promise((resolve, _) => resolve(null));
+  }
+  return addDBObject("/profile/education/objs", content);
+}
+
+export async function removeEducationCourse(key) {
+  return database.ref(`/profile/education/objs/${key}`).remove();
+}
+
+export async function fetchEducation(fromCache) {
+  return fetchDBObject("/profile/education", fromCache);
 }
