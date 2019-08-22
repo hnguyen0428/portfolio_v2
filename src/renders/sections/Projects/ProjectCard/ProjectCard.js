@@ -57,6 +57,7 @@ class ProjectCard extends ReactComponent {
 
   onClickCardMobile = (e) => {
     if (this.state.expanded) {
+      this.closeCardMobile();
       return;
     }
 
@@ -74,8 +75,7 @@ class ProjectCard extends ReactComponent {
     this.closeModal();
   };
 
-  onClickCloseButtonMobile = (e) => {
-    e.stopPropagation();
+  closeCardMobile = () => {
     this.setState({expandClass: false});
   };
 
@@ -122,7 +122,7 @@ class ProjectCard extends ReactComponent {
 
   mobileRender() {
     const {title, shortDesc, longDesc, techUsed, repo} = this.props.projectObj;
-    const {expanded, expandClass, showExtraContent} = this.state;
+    const {expandClass, showExtraContent} = this.state;
     let cls = expandClass ?
       "project-card-overflow expand-transition expanded-height" :
       "project-card-overflow project-card-mobile expand-transition";
@@ -132,11 +132,6 @@ class ProjectCard extends ReactComponent {
         <Text>{longDesc}</Text>
         <Flexbox className="btnHover">
           <Text fontWeight={500} lineHeight={0.4}>{techUsed}</Text>
-        </Flexbox>
-        <Flexbox widthPct={100} alignItems="flex-end" overflow="hidden">
-          <Button label="Close" fontSize={14} lineHeight={0.5}
-                  paddingHorizontal={8}
-                  onClick={this.onClickCloseButtonMobile}/>
         </Flexbox>
       </Flexbox>
     );

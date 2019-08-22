@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="406d95e0-2826-4a31-966f-0247bf8304d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/firebase/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/firebase/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renders/components/Modal/Modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Modal/Modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renders/components/Navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/components/Navbar/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renders/sections/AboutMe/AboutMe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/AboutMe/AboutMe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renders/sections/Education/Education.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/Education/Education.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renders/sections/LogMetrics/LogMetrics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/LogMetrics/LogMetrics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renders/sections/Projects/Projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/Projects/Projects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperience.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperience.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,16 +20,25 @@
         <entry file="file://$PROJECT_DIR$/src/renders/sections/Education/Education.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="51" lean-forward="true" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+              <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/renders/sections/LogMetrics/LogMetrics.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-121">
+              <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/renders/sections/LogMetrics/LogMetrics.js">
+        <entry file="file://$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="153" column="63" lean-forward="true" selection-start-line="153" selection-start-column="63" selection-end-line="153" selection-end-column="63" />
+            <state relative-caret-position="466">
+              <caret line="134" column="18" selection-start-line="134" selection-start-column="18" selection-end-line="134" selection-end-column="18" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -44,10 +47,29 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-433">
+              <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/firebase/auth.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-45" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/constants/common.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
-              <caret line="35" column="32" lean-forward="true" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+              <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -56,7 +78,7 @@
         <entry file="file://$PROJECT_DIR$/src/renders/components/Modal/Modal.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="364">
-              <caret line="51" column="61" lean-forward="true" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
+              <caret line="51" column="61" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="n#!!block;n#modalSizes#0;n#Modal#0" />
@@ -69,7 +91,7 @@
         <entry file="file://$PROJECT_DIR$/src/renders/sections/AboutMe/AboutMe.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
-              <caret line="34" column="27" lean-forward="true" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+              <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -81,7 +103,7 @@
         <entry file="file://$PROJECT_DIR$/src/renders/sections/Projects/Projects.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1170">
-              <caret line="78" column="50" lean-forward="true" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="50" />
+              <caret line="78" column="50" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="50" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -93,40 +115,7 @@
         <entry file="file://$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperience.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="209">
-              <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/firebase/profile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-582">
-              <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/renders/components/TextInput/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/firebase/logger.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
+              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -179,9 +168,7 @@
         <option value="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/style.css" />
         <option value="$PROJECT_DIR$/src/renders/ReactComponent.js" />
         <option value="$PROJECT_DIR$/src/renders/components/Modal/style.css" />
-        <option value="$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js" />
         <option value="$PROJECT_DIR$/src/renders/components/Button/Button.js" />
-        <option value="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" />
         <option value="$PROJECT_DIR$/src/renders/sections/LogMetrics/index.js" />
         <option value="$PROJECT_DIR$/src/renders/Login.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
@@ -212,6 +199,8 @@
         <option value="$PROJECT_DIR$/src/renders/components/NavbarUnit/NavbarUnit.js" />
         <option value="$PROJECT_DIR$/src/renders/components/Navbar/Navbar.js" />
         <option value="$PROJECT_DIR$/src/renders/sections/LogMetrics/LogMetrics.js" />
+        <option value="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" />
+        <option value="$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js" />
       </list>
     </option>
   </component>
@@ -560,12 +549,12 @@
       <option name="presentableId" value="Default" />
       <updated>1565470391923</updated>
       <workItem from="1565470394508" duration="74780000" />
-      <workItem from="1565859292292" duration="77143000" />
+      <workItem from="1565859292292" duration="78192000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151923000" />
+    <option name="totallyTimeSpent" value="152972000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -615,13 +604,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/renders/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/renders/components/Card/Card.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -756,16 +738,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1007">
-          <caret line="149" column="23" lean-forward="true" selection-start-line="149" selection-start-column="23" selection-end-line="149" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/utils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -807,16 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="31" column="6" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="212" column="10" selection-start-line="212" selection-start-column="10" selection-end-line="212" selection-end-column="61" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -884,14 +846,14 @@
     <entry file="file://$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperience.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
-          <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/renders/sections/Projects/Projects.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1170">
-          <caret line="78" column="50" lean-forward="true" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="50" />
+          <caret line="78" column="50" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="50" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -901,7 +863,7 @@
     <entry file="file://$PROJECT_DIR$/src/renders/sections/AboutMe/AboutMe.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
-          <caret line="34" column="27" lean-forward="true" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+          <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -921,7 +883,7 @@
     <entry file="file://$PROJECT_DIR$/src/renders/sections/Education/Education.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="51" lean-forward="true" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+          <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -986,7 +948,7 @@
     <entry file="file://$PROJECT_DIR$/src/renders/components/Modal/Modal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
-          <caret line="51" column="61" lean-forward="true" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
+          <caret line="51" column="61" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="n#!!block;n#modalSizes#0;n#Modal#0" />
@@ -997,14 +959,36 @@
     <entry file="file://$PROJECT_DIR$/src/constants/common.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="35" column="32" lean-forward="true" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/renders/sections/LogMetrics/LogMetrics.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="153" column="63" lean-forward="true" selection-start-line="153" selection-start-column="63" selection-end-line="153" selection-end-column="63" />
+        <state relative-caret-position="-121">
+          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/firebase/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-433">
+          <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="134" column="18" selection-start-line="134" selection-start-column="18" selection-end-line="134" selection-end-column="18" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

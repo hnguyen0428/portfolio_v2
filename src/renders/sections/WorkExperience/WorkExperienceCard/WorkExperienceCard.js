@@ -51,6 +51,7 @@ class WorkExperienceCard extends ReactComponent {
 
   onClickCardMobile = (e) => {
     if (this.state.expanded) {
+      this.closeCardMobile();
       return;
     }
 
@@ -68,8 +69,7 @@ class WorkExperienceCard extends ReactComponent {
     this.closeModal();
   };
 
-  onClickCloseButtonMobile = (e) => {
-    e.stopPropagation();
+  closeCardMobile = () => {
     this.setState({expandClass: false});
   };
 
@@ -119,7 +119,7 @@ class WorkExperienceCard extends ReactComponent {
               onClick={this.onClickCardMobile}
               onTransitionEnd={this.onTransitionEndMobile}>
           <Flexbox widthPct={100} alignItems="center" justifyContent="center">
-            <Image src={logo}/>
+            <Image src={logo} />
           </Flexbox>
           {
             showExtraContent ?
@@ -129,11 +129,6 @@ class WorkExperienceCard extends ReactComponent {
                 <Text fontSize={12}>{description}</Text>
                 <Flexbox className="btnHover">
                   <Text fontWeight={500} lineHeight={0.4}>{techUsed}</Text>
-                </Flexbox>
-                <Flexbox widthPct={100} alignItems="flex-end">
-                  <Button label="Close" fontSize={14} lineHeight={0.5}
-                          paddingHorizontal={8}
-                          onClick={this.onClickCloseButtonMobile}/>
                 </Flexbox>
               </Flexbox> :
               null
