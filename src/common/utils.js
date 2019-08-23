@@ -19,3 +19,21 @@ export function getEditMode() {
 export function coalesce(val1, val2) {
   return val1 !== null && val1 !== undefined ? val1 : val2;
 }
+
+export function isObject(obj) {
+  return Object.prototype.toString.call(obj) === "[object Object]";
+}
+
+export function filter_nulls(obj) {
+  let tmp = {};
+  for (let key in obj) {
+    if (obj[key] !== undefined && obj[key] !== null) {
+      if (isObject(obj[key])) {
+        tmp[key] = filter_nulls(obj[key]);
+      } else {
+        tmp[key] = obj[key];
+      }
+    }
+  }
+  return tmp;
+}

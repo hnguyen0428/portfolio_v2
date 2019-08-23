@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="406d95e0-2826-4a31-966f-0247bf8304d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/firebase/logger.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/firebase/logger.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,10 +34,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/renders/Home.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="36" column="17" lean-forward="true" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
+            <state relative-caret-position="1583">
               <caret line="134" column="18" selection-start-line="134" selection-start-column="18" selection-end-line="134" selection-end-column="18" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -88,34 +100,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/renders/sections/AboutMe/AboutMe.js">
+        <entry file="file://$PROJECT_DIR$/src/firebase/logger.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+            <state relative-caret-position="369">
+              <caret line="52" column="20" lean-forward="true" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#44#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/renders/sections/Projects/Projects.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/common/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="78" column="50" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="50" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperience.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+            <state relative-caret-position="339">
+              <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -175,16 +175,13 @@
         <option value="$PROJECT_DIR$/src/renders/sections/Education/index.js" />
         <option value="$PROJECT_DIR$/src/static/Profile.js" />
         <option value="$PROJECT_DIR$/src/common/props.js" />
-        <option value="$PROJECT_DIR$/src/common/utils.js" />
         <option value="$PROJECT_DIR$/src/renders/components/Icon/Icon.js" />
         <option value="$PROJECT_DIR$/src/renders/components/Image/Image.js" />
         <option value="$PROJECT_DIR$/src/renders/sections/Education/style.css" />
         <option value="$PROJECT_DIR$/src/renders/components/Flexbox/Flexbox.js" />
         <option value="$PROJECT_DIR$/src/constants/common.css" />
         <option value="$PROJECT_DIR$/src/renders/components/TextInput/style.css" />
-        <option value="$PROJECT_DIR$/src/renders/Home.js" />
         <option value="$PROJECT_DIR$/src/renders/components/Navbar/style.css" />
-        <option value="$PROJECT_DIR$/src/firebase/logger.js" />
         <option value="$PROJECT_DIR$/src/firebase/profile.js" />
         <option value="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperience.js" />
         <option value="$PROJECT_DIR$/src/renders/sections/Projects/Projects.js" />
@@ -201,6 +198,9 @@
         <option value="$PROJECT_DIR$/src/renders/sections/LogMetrics/LogMetrics.js" />
         <option value="$PROJECT_DIR$/src/renders/sections/WorkExperience/WorkExperienceCard/WorkExperienceCard.js" />
         <option value="$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js" />
+        <option value="$PROJECT_DIR$/src/renders/Home.js" />
+        <option value="$PROJECT_DIR$/src/firebase/logger.js" />
+        <option value="$PROJECT_DIR$/src/common/utils.js" />
       </list>
     </option>
   </component>
@@ -549,12 +549,12 @@
       <option name="presentableId" value="Default" />
       <updated>1565470391923</updated>
       <workItem from="1565470394508" duration="74780000" />
-      <workItem from="1565859292292" duration="78192000" />
+      <workItem from="1565859292292" duration="80072000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152972000" />
+    <option name="totallyTimeSpent" value="154852000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -738,13 +738,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/renders/components/Button/Button.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="982">
@@ -792,16 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/renders/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="79" column="20" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/renders/sections/Education/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -813,16 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/firebase/logger.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -987,11 +960,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/renders/sections/Projects/ProjectCard/ProjectCard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
+        <state relative-caret-position="1583">
           <caret line="134" column="18" selection-start-line="134" selection-start-column="18" selection-end-line="134" selection-end-column="18" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/renders/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="36" column="17" lean-forward="true" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/firebase/logger.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="52" column="20" lean-forward="true" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
         </state>
       </provider>
     </entry>

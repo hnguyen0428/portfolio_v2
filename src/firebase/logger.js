@@ -15,6 +15,7 @@ import {
   engineVersion,
   getUA,
 } from 'react-device-detect';
+import {coalesce, filter_nulls} from "../common/utils";
 
 
 class Logger {
@@ -44,13 +45,14 @@ class Logger {
       // Only log if not logged in
       if (!loggedIn) {
         let extraData = this.getExtraData();
+        data = coalesce(data, {});
         data = {
           ...extraData,
           ...data
         };
-
+        data = filter_nulls(data);
         database.ref('actions').push(data)
-          .then(onSuccess).catch(onFailure)
+          .then(onSuccess).catch(onFailure);
       }
     });
   }
