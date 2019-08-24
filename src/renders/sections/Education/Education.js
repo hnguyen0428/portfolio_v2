@@ -29,10 +29,18 @@ class Education extends ReactComponent {
 
     let heading = profile.education.heading;
     let text = profile.education.text;
+    let objs = profile.education.objs;
+    let key = 0;
+    objs.forEach((obj) => {
+      obj.isLocal = true;
+      obj.key = key;
+      key++;
+    });
+
     this.state = {
       heading: heading,
       text: text,
-      objs: [],
+      objs: objs,
       showModal: false,
       btnHover: "btnHover",
       addState: false,
@@ -77,7 +85,7 @@ class Education extends ReactComponent {
       this.setState({
         heading: coalesce(obj.heading, this.state.heading),
         text: coalesce(obj.text, this.state.text),
-        objs: courses,
+        objs: courses.length > 0 ? courses : this.state.objs,
       });
     }
   };
@@ -232,7 +240,9 @@ class Education extends ReactComponent {
                         <Icon className="btnHover cursorPointer"
                               src="assets/delete.svg" size={24}
                               onClick={(e) => {
-                                this.onClickDeleteCourse(e, course.key)
+                                if (!course.isLocal) {
+                                  this.onClickDeleteCourse(e, course.key);
+                                }
                               }}/>
                       </Flexbox> :
                       null
