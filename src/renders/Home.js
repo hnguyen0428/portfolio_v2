@@ -14,7 +14,7 @@ import WorkExperience from "./sections/WorkExperience";
 import Projects from "./sections/Projects";
 import Contacts from "./sections/Contacts";
 import {fetchLoginState, logout} from "../firebase/auth";
-import {getEditMode} from "../common/utils";
+import {getEditMode, getUserMode} from "../common/utils";
 import LogMetrics from "./sections/LogMetrics";
 import Education from "./sections/Education";
 
@@ -24,9 +24,11 @@ class Home extends ReactComponent {
     super(props);
 
     let edit = getEditMode();
+    let userMode = getUserMode();
     this.state = {
       loggedIn: false,
       edit: edit,
+      userMode: userMode,
     };
   }
 
@@ -55,8 +57,14 @@ class Home extends ReactComponent {
     this.setState({edit: true});
   };
 
+  onClickUserMode = (e) => {
+    this.setState({userMode: true});
+  };
+
   mobileRender() {
     let root = process.env.NODE_ENV === 'development' ? '/' : '/portfolio/';
+    let {loggedIn, userMode} = this.state;
+
     return (
       <Flexbox alignItems="center">
         <Navbar blur>
@@ -64,7 +72,13 @@ class Home extends ReactComponent {
                       paddingHorizontal={8} href={root} fontSize={12}
                       lineHeight={1.5}/>
           {
-            this.state.loggedIn ?
+            loggedIn && !userMode ?
+              <NavbarUnit label="User Mode" onClick={this.onClickUserMode}
+                          paddingHorizontal={8} fontSize={12}/> :
+              null
+          }
+          {
+            loggedIn && !userMode ?
               <NavbarUnit label="Logout" onClick={this.onClickLogout}
                           paddingHorizontal={8} fontSize={12}/> :
               null
@@ -79,7 +93,7 @@ class Home extends ReactComponent {
         <Projects/>
         <Education/>
         {
-          this.state.loggedIn
+          loggedIn && !userMode
             ? <LogMetrics/>
             : null
         }
@@ -89,7 +103,8 @@ class Home extends ReactComponent {
   }
 
   desktopRender() {
-    let allowEdit = this.state.loggedIn && this.state.edit;
+    let {loggedIn, userMode, edit} = this.state;
+    let allowEdit = loggedIn && edit && !userMode;
 
     let root = process.env.NODE_ENV === 'development' ? '/' : '/portfolio/';
     return (
@@ -98,14 +113,21 @@ class Home extends ReactComponent {
           <NavbarUnit label="Daniel Nguyen" position="left" fontWeight={500}
                       paddingHorizontal={16} href={root}/>
           {
-            this.state.loggedIn ?
+            loggedIn && !userMode ?
+              <NavbarUnit label="User Mode"
+                          paddingHorizontal={8}
+                          onClick={this.onClickUserMode}/> :
+              null
+          }
+          {
+            loggedIn && !userMode ?
               <NavbarUnit label="Edit Mode"
                           paddingHorizontal={8}
                           onClick={this.onClickEditMode}/> :
               null
           }
           {
-            this.state.loggedIn ?
+            loggedIn && !userMode ?
               <NavbarUnit label="Logout" onClick={this.onClickLogout}
                           paddingHorizontal={12}/> :
               null
@@ -130,9 +152,9 @@ class Home extends ReactComponent {
         <AboutMe allowEdit={allowEdit}/>
         <WorkExperience allowEdit={allowEdit}/>
         <Projects allowEdit={allowEdit}/>
-        <Education allowEdit={allowEdit} loggedIn={this.state.loggedIn}/>
+        <Education allowEdit={allowEdit} loggedIn={loggedIn}/>
         {
-          this.state.loggedIn
+          loggedIn && !userMode
             ? <LogMetrics/>
             : null
         }

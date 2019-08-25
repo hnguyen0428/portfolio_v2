@@ -3,17 +3,31 @@ import history from '../renders/history';
 export function getEditMode() {
   const params = new URLSearchParams(history.location.search);
   let edit = params.get("edit");
+  edit = coalesce(edit, "false");
   if (edit === "true") {
     edit = true;
   } else if (edit === "false") {
     edit = false;
-  } else if (edit !== null && edit !== undefined) {
-    alert("edit parameter must be true or false");
-    edit = false;
-  } else {
+  } else  {
+    alert("edit parameter must be `true` or `false`");
     edit = false;
   }
   return edit;
+}
+
+export function getUserMode() {
+  const params = new URLSearchParams(history.location.search);
+  let userMode = params.get("user_mode");
+  userMode = coalesce(userMode, "false");
+  if (userMode === "true") {
+    userMode = true;
+  } else if (userMode === "false") {
+    userMode = false;
+  } else {
+    alert("user_mode parameter must be `true` or `false`");
+    userMode = false;
+  }
+  return userMode;
 }
 
 export function coalesce(val1, val2) {
