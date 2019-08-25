@@ -117,11 +117,7 @@ class Text extends React.Component {
         );
     }
 
-    return (
-      <Flexbox onClick={this.props.onClick}>
-        {headingComponent}
-      </Flexbox>
-    );
+    return headingComponent;
   }
 }
 
