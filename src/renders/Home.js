@@ -32,8 +32,7 @@ class Home extends ReactComponent {
     };
   }
 
-  componentDidMount() {
-    fetchLoginState((loggedIn) => this.setState({loggedIn: loggedIn}));
+  async componentDidMount() {
     let hasLogged = sessionStorage.getItem('hasLogged');
     if (hasLogged !== '1') {
       Logger.genLog({
@@ -43,6 +42,8 @@ class Home extends ReactComponent {
         sessionStorage.setItem('hasLogged', '1');
       });
     }
+    let loggedIn = await fetchLoginState();
+    this.setState({loggedIn: loggedIn});
   }
 
   onClickLogout = (e) => {

@@ -27,16 +27,16 @@ export function logout(onSuccess, onFailure) {
   auth.signOut().then(onSuccess).catch(onFailure)
 }
 
-export function fetchLoginState(onSuccess) {
+export async function fetchLoginState(onSuccess) {
   let user = auth.currentUser;
   if (user) {
     if (onSuccess) {
       onSuccess(true);
     }
-    return;
+    return new Promise((resolve, _) => resolve(true));
   }
 
-  firebase.auth().onAuthStateChanged((user) => {
+  user = await firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       if (onSuccess) {
         onSuccess(true);
@@ -47,4 +47,6 @@ export function fetchLoginState(onSuccess) {
       }
     }
   });
+
+  return new Promise((resolve, _) => resolve(user !== null && user !== undefined));
 }
