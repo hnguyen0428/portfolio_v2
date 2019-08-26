@@ -36,17 +36,19 @@ export async function fetchLoginState(onSuccess) {
     return new Promise((resolve, _) => resolve(true));
   }
 
-  user = await firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      if (onSuccess) {
-        onSuccess(true);
+  return new Promise((resolve, _) => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        if (onSuccess) {
+          onSuccess(true);
+        }
+        resolve(true);
+      } else {
+        if (onSuccess) {
+          onSuccess(false);
+        }
+        resolve(false);
       }
-    } else {
-      if (onSuccess) {
-        onSuccess(false);
-      }
-    }
+    });
   });
-
-  return new Promise((resolve, _) => resolve(user !== null && user !== undefined));
 }
